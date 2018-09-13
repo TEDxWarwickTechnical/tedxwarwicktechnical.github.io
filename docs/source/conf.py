@@ -23,7 +23,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'TEDxWarwick Website'
-copyright = '2018-{}, The TEDxWarwick team'.format(datetime.now().year)
+copyright = '2018-{}, the TEDxWarwick team'.format(datetime.now().year)
 author = 'TEDxWarwick'
 
 # The short X.Y version
