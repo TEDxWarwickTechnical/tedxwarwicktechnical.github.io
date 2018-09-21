@@ -1,0 +1,51 @@
+<title>{% if page.title %}{{ page.title }} | {% endif %}TEDxWarwick</title>
+{%- comment %}
+    Metadata
+{% endcomment %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="{{ site.url }}{{ page.url | relative_url }}">
+<meta name="description" content="{{ page.description | strip | default: "An annual conference on the University of Warwick campus, bringing inspiring speakers and ground-breaking ideas to the West Midlands and beyond." }}">
+{%- comment %}
+    Facebook open graph metadata
+{% endcomment %}
+<meta property="og:url" content="{{ site.url }}{{ page.url | relative_url }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TEDxWarwick{% if page.title %} | {{ page.title }}{% endif %}">
+<meta property="og:description" content="{{ page.description | strip | default: "An annual conference on the University of Warwick campus, bringing inspiring speakers and ground-breaking ideas to the West Midlands and beyond." }}">
+<meta property="og:image" content="{{ site.url }}{{ "/assets/img/brand/social-cover.png" | relative_url }}">
+<meta property="og:image:alt" content="TEDxWarwick">
+<meta property="og:image:width" content="602">
+<meta property="og:image:height" content="315">
+<meta property="fb:app_id" content="{{ site.fb-app-id }}">
+{%- comment %}
+    Twitter metadata
+{% endcomment %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@{{ site.twitter-handle }}">
+<meta name="twitter:creator" content="@{{ site.twitter-handle }}">
+<meta name="twitter:title" content="TEDxWarwick{% if page.title %} | {{ page.title }}{% endif %}">
+<meta name="twitter:description" content="{{ page.description | strip | default: "An annual conference on the University of Warwick campus, bringing inspiring speakers and ground-breaking ideas to the West Midlands and beyond." }}">
+<meta name="twitter:image" content="{{ site.url }}{{ "/assets/img/brand/social-cover.png" | relative_url }}">
+<meta name="twitter:image:alt" content="TEDxWarwick">
+<meta name="twitter:image:width" content="602">
+<meta name="twitter:image:height" content="315">
+<meta name="twitter:domain" content="{{ site.url | split: "/" | last }}">
+{%- comment %}
+    Site resources
+{% endcomment %}
+<link type="text/css" rel="prefetch" href="//fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i|Source+Sans+Pro:600,600i|Fira+Mono:400,700">
+<link type="text/css" rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+<script type="application/javascript" src="{{ "/assets/js/init.js" | relative_url }}"></script>
+<script type="application/javascript">x.init({url:'{{ page.url | relative_url }}',fbAppId:'{{ site.fb-app-id }}'})</script>
+{%- comment %}
+    Social SDKs
+{% endcomment %}
+<script type="application/javascript" src="https://connect.facebook.net/en_GB/sdk.js" defer id="facebook-jssdk"></script>
+<script type="application/javascript" src="https://platform.twitter.com/widgets.js" defer></script>
+{%- comment %}
+    Site-wide JSON-LD
+{% endcomment %}
+<script type="application/ld+json">
+{% include json-ld/organization.json %}
+</script>

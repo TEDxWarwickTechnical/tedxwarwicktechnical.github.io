@@ -1,0 +1,189 @@
+@function rem($px) {
+  @return ($px / 16) * 1rem;
+}
+
+@function line-steps($steps) {
+  @return rem($steps * 4);
+}
+
+@mixin inner-margin($size) {
+  margin-bottom: $size;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+h1, h2, h3, h4, h5, h6,
+.sh1, .sh2 {
+  font-family: $font-heading;
+  // margin: 0.4em 0;
+}
+
+body {
+  font-family: $font-body;
+  font-size: rem(16);
+  line-height: line-steps(5);
+  letter-spacing: rem(0.5);
+  font-weight: 400;
+}
+
+p {
+  margin: line-steps(1) 0;
+}
+
+h1 {
+  font-size: rem(96);
+  line-height: line-steps(24);
+  letter-spacing: rem(-1.5);
+  margin: line-steps(4) 0;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: rem(60);
+  line-height: line-steps(16);
+  letter-spacing: rem(-0.5);
+  margin: line-steps(4) 0;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: rem(48);
+  line-height: line-steps(12);
+  letter-spacing: 0;
+  margin: line-steps(4) 0;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: rem(34);
+  line-height: line-steps(9);
+  letter-spacing: rem(0.25);
+  margin: line-steps(3) 0;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: rem(24);
+  line-height: line-steps(7);
+  letter-spacing: 0;
+  margin: line-steps(2) 0;
+  font-weight: 400;
+}
+
+h6 {
+  font-size: rem(20);
+  line-height: line-steps(6);
+  letter-spacing: rem(0.15);
+  margin: line-steps(1) 0;
+  font-weight: 600;
+}
+
+.sh1 {
+  font-size: rem(16);
+  line-height: line-steps(5);
+  letter-spacing: rem(0.15);
+  margin: line-steps(1) 0;
+  font-weight: 400;
+  color: $color-muted;
+}
+
+.sh2 {
+  font-size: rem(14);
+  line-height: line-steps(4);
+  letter-spacing: rem(0.1);
+  margin: line-steps(1) 0;
+  font-weight: 600;
+  color: $color-muted;
+}
+
+small,
+.small {
+  font-size: rem(14);
+  line-height: line-steps(4);
+  letter-spacing: rem(0.25);
+  margin: line-steps(2) 0;
+  font-weight: 400;
+  display: block;
+}
+
+button,
+input[type=button],
+input[type=submit],
+.btn {
+  font-size: rem(14);
+  line-height: line-steps(4);
+  letter-spacing: rem(0.75);
+  margin: line-steps(1) 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+caption,
+.caption {
+  font-size: rem(12);
+  line-height: line-steps(4);
+  letter-spacing: rem(0.4);
+  margin: line-steps(1) 0;
+  font-weight: 400;
+  color: $color-muted;
+}
+
+.overline {
+  font-size: rem(10);
+  line-height: line-steps(4);
+  letter-spacing: rem(1.5);
+  margin: line-steps(1) 0;
+  font-weight: 400;
+  color: $ted-red;
+  text-transform: uppercase;
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+i, em {
+  font-style: italic;
+}
+
+pre, code {
+  font-family: $font-code;
+}
+
+pre {
+  margin: 0 10%;
+  width: 80%;
+  max-width: 80%;
+  overflow-x: scroll;
+}
+
+a {
+  color: inherit;
+
+  &:visited, &:active {
+    color: inherit;
+  }
+
+  &.plain {
+    text-decoration: none;
+  }
+
+  &:hover:not(.plain) {
+    text-decoration: none;
+    color: $color-link;
+  }
+
+  &.hot {
+    &, &:hover, &:visited, &:active {
+      color: $color-link;
+    }
+  }
+}
+
+.muted {
+  color: $color-muted;
+}
+
+// Media queries to follow

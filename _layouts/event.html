@@ -1,0 +1,104 @@
+{%- assign speakers = '' | split: '' -%}
+{%- assign speakerKeys = page.speakers | uniq -%}
+{%- assign numSpeakers = speakerKeys | size -%}
+
+{%- for key in speakerKeys -%}
+  {%- assign potentialSpeakers = site.speakers | where: "slug", key -%}
+  {%- assign foundSpeaker = false -%}
+
+  {%- for potentialSpeaker in potentialSpeakers -%}
+    {%- assign testSlug = potentialSpeaker.id | split: "/" -%}
+
+    {%- if testSlug[2] == page.slug -%}
+      {%- assign speakers = speakers | push: potentialSpeaker -%}
+      {%- assign foundSpeaker = true -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- unless foundSpeaker -%}
+    {%- assign numSpeakers = numSpeakers | minus: 1 -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  {% include page/links.html %}
+  <script type="application/javascript" src="{{ "/assets/js/event.js" | relative_url }}"></script>
+  <script type="application/ld+json">
+  {% include json-ld/event.json event=page.slug speakers=speakers %}
+  </script>
+</head>
+<body>
+  <div id="content">
+    {% include page/header.html %}
+    <main>
+      <div class="container">
+        <h2>{{ page.title }}</h2>
+        {{ content }}
+        {% if speakers.size > 0 -%}
+        <section id="speakers">
+          <h4>The speakers</h4>
+          <div class="speakers">
+            {% for speaker in speakers -%}
+            <div class="card" data-slug="{{ speaker.slug }}">
+              {%- assign imgBase = "/assets/img/speakers/" | append: page.slug | append: "/" | append: speaker.slug | relative_url %}
+              <img class="headshot" src="{{ imgBase }}.png" srcset="{{ imgBase }}@2x.png 2x" alt="{{ speaker.title }}">
+              <div class="text">
+                {% if speaker.tags -%}
+                  <div class="overline">{{ speaker.tags | join: "&emsp;" }}</div>
+                {%- endif %}
+                <h6>{{ speaker.title }}</h6>
+                {% if speaker["short-bio"] -%}
+                  <div class="caption">{{ speaker["short-bio"] }}</div>
+                {%- endif %}
+                {% if speaker.talk -%}
+                  <div class="small">{{ speaker.talk }}</div>
+                {%- endif %}
+              </div>
+              {% if speaker.video -%}
+                <div class="actions">
+                  <!-- <img src="//img.youtube.com/vi/{{ speaker.video }}/mqdefault.jpg"> -->
+                  <!-- <a class="button" role="button" href="https://www.youtube.com/watch?v={{ speaker.video }}">Watch Video</a> -->
+                </div>
+              {%- endif %}
+            </div>
+            {% endfor %}
+          </div>
+        </section>
+        {%- endif %}
+        {% if page.location -%}
+        {%- assign location = site.data.locations[page.location] -%}
+        <section id="location">
+          <h4>Location</h4>
+          <div class="map">
+            <iframe src="{{ location.map }}" allow="fullscreen"></iframe>
+          </div>
+        </section>
+        {%- endif %}
+      </div>
+    </main>
+    {% include page/footer.html %}
+  </div>
+  <div id="overlay"></div>
+  {% for speaker in speakers -%}
+    <div id="speaker-popover-{{ speaker.slug }}" class="popover">
+      <h4>{{ speaker.title }}</h4>
+      {% if speaker["short-bio"] -%}
+        <h5 class="muted">{{ speaker["short-bio"] }}</h5>
+      {%- endif %}
+      {% if speaker.talk -%}
+        <div class="small">{{ speaker.talk }}</div>
+      {%- endif %}
+      {% if speaker.video -%}
+          <img src="//img.youtube.com/vi/{{ speaker.video }}/mqdefault.jpg">
+          <!-- <a class="button" role="button" href="https://www.youtube.com/watch?v={{ speaker.video }}">Watch Video</a> -->
+      {%- endif %}
+    </div>
+  {%- endfor %}
+  {% if page.script.size > 0 -%}
+    <script type="application/javascript">{{ page.script }}</script>
+  {%- endif %}
+</body>
+</html>

@@ -1,0 +1,46 @@
+{%- assign ext = include.type | default: 'png' -%}
+{%- assign ext = '.' | append: ext -%}
+
+{%- assign images = '' | split: '' -%}
+{%- assign images = images | push: include.img -%}
+{%- assign images = images | push: include.imgDefault -%}
+
+{%- assign imageFound = 0 -%}
+{%- assign image = nil -%}
+
+{%- for testImage in images -%}
+  {%- assign imageBase = '/assets/img/' | append: testImage -%}
+  {%- assign imagePath = imageBase | append: ext -%}
+  {%- assign imageFound = site.static_files | where: 'path', imagePath | size -%}
+
+  {%- if imageFound > 0 -%}
+    {%- assign image = imageBase -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- assign sizes = '2 3' | split: ' ' -%}
+{%- assign srcSet = '' | split: '' -%}
+
+{%- for size in sizes -%}
+  {%- assign testImage = image | append: '@' | append: size | append: 'x' | append: ext -%}
+  {%- assign imageFound = site.static_files | where: 'path', testImage | size -%}
+
+  {%- if imageFound > 0 -%}
+    {%- assign srcElem = testImage | relative_url | append: ' ' | append: size | append: 'x' -%}
+    {%- assign srcSet = srcSet | push: srcElem -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{% if image -%}
+  <img src="{{ image | append: ext | relative_url }}"
+    {% if include.alt -%}
+      alt="{{ include.alt }}"
+    {%- endif %}
+    {% unless srcSet == empty -%}
+      srcset="{{ srcSet | join: ', ' }}"
+    {%- endunless %}
+    {% for key in include.attrKeys -%}
+      {{ key }}="{{ include.attrVals[forloop.index0] }}"
+    {%- endfor %}>
+{%- endif %}

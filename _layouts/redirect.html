@@ -1,0 +1,18 @@
+---
+layout: null
+title: Redirecting...
+---
+
+{% assign destination = page.destination | absolute_url %}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en" }}">
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="{{ page.url | relative_url }}">
+  <noscript><meta http-equiv="refresh" content="0; url={{ page.redirect }}"></noscript>
+  <script type="text/javascript">window.location.replace('{{ destination }}')</script>
+</head>
+<body>
+  <p>If you are not redirected automatically, please <a href="{{ destination }}">click here</a>.</p>
+</body>
+</html>

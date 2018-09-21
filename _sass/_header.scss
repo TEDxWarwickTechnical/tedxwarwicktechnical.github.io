@@ -1,0 +1,132 @@
+header {
+  $bottom-border-size: 0;
+
+  height: 120px;
+  background-color: $color-header;
+  border-bottom: $bottom-border-size solid $color-header-underscore;
+  box-shadow: 0 1px 3px $color-shadow;
+
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .brand {
+    a {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    img {
+      flex: 1;
+      height: 102px;
+    }
+  }
+
+  .nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2em;
+  }
+
+  .cta {
+    flex: 1;
+    text-align: center;
+    overflow: none;
+
+    background-color: $color-unfinished;
+
+    h5, button {
+      display: inline-block;
+      box-sizing: border-box;
+    }
+  }
+
+  nav {
+    font-family: $font-menu;
+    text-align: right;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    li {
+      display: block;
+      margin-bottom: $bottom-border-size;
+    }
+
+    @mixin underscore-transition {
+      $duration: 0.2s;
+      $timing: ease;
+      transition: padding-bottom $duration $timing,
+                  border-bottom-width $duration $timing;
+    }
+
+    a {
+      padding: 1em 1em;
+      display: inline-block;
+      color: $color-nav !important;
+      text-decoration: none;
+      // margin-bottom: 0.25em;
+      text-align: center;
+      border-bottom: 0 solid $color-nav-active;
+
+      @include underscore-transition;
+
+      @mixin active {
+        color: $ted-red !important;
+        border-bottom-width: 0.25em;
+        padding-bottom: calc(1em - 0.25em);
+      }
+
+      &:hover {
+        @include active;
+        @include underscore-transition;
+      }
+
+      &.current {
+        @include active;
+        font-weight: bold;
+      }
+
+      /**
+       * Prevents slight change in positioning with font-weight change
+       * https://stackoverflow.com/a/32570813/1813169
+       */
+      &::after {
+        content: attr(title);
+        display: block;
+        font-weight: bold;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+      }
+    }
+  }
+
+  &.header-small {
+    height: inherit;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    // box-shadow: 0 0 5px #666;
+
+    .brand img {
+      height: 38px;
+    }
+
+    .nav {
+      flex-direction: row;
+      margin-left: 0;
+    }
+
+    .cta {
+      margin: auto 1em;
+    }
+  }
+}

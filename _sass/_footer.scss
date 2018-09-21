@@ -1,0 +1,33 @@
+footer {
+  padding: 0.5em 0;
+  color: $color-footer-text;
+  background-color: $color-footer;
+  font-family: $font-menu;
+  text-align: center;
+
+  p {
+    margin-bottom: 0.75em;
+  }
+
+  .social {
+    height: 20px;
+    margin: 0.5em 0 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    li {
+      display: block;
+      height: 20px;
+      margin-right: 0.5em;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      span {
+        display: block;
+      }
+    }
+  }
+}

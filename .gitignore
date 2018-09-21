@@ -30,7 +30,6 @@ _site/
 .rvmrc
 
 # Overrides
-/.gems/
 /Gemfile.lock
 
 

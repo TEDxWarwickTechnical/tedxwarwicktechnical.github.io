@@ -1,0 +1,22 @@
+@mixin parallax($perspective, $height) {
+  height: $height;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: $perspective * 1px;
+}
+
+@mixin parallax-fg($height) {
+  position: relative;
+  height: $height;
+  overflow: auto;
+}
+
+@mixin parallax-bg($perspective, $depth) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateZ($depth * 1px) scale(1 + ($depth * -1) / $perspective);
+  z-index: -1;
+}

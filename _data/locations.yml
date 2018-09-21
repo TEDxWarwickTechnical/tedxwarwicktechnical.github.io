@@ -1,0 +1,23 @@
+butterworth:
+  name: "Butterworth Hall, Warwick Arts Centre"
+  address:
+    street: "Gibbet Hill Road"
+    city: "Coventry"
+    postcode: "CV4 7AL"
+  map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.492158687165!2d-1.5631798838636017!3d52.37962787978795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48774acf6304377d%3A0x61993381f90201b2!2sWarwick+Arts+Centre!5e0!3m2!1sen!2suk!4v1517017456230"
+
+slate:
+  name: "The Slate"
+  address:
+    street: "Scarman Road"
+    city: "Coventry"
+    postcode: "CV4 7SH"
+  map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.401640605!2d-1.5686546839620252!3d52.38126897978804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48774ace722707df%3A0xe8b7b97d363462bd!2sThe+Slate+-+Warwick+Conferences!5e0!3m2!1sen!2suk!4v1536853208067"
+
+ramphal:
+  name: "Ramphal Building"
+  address:
+    street: "Library Road"
+    city: "Coventry"
+    postcode: "CV4 7AL"
+  map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.394205358388!2d-1.5657250839619576!3d52.381403779788165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48774acfb5cda59d%3A0x58b0aca03617a29d!2sRamphal+Building%2C+Coventry+CV4+7AL!5e0!3m2!1sen!2suk!4v1536853250234"

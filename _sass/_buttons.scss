@@ -1,0 +1,35 @@
+// Remember to override `a` styles from _text.scss
+
+.button {
+    display: inline-block;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    border: 1px solid #ccc;
+    font-family: $font-menu;
+    font-size: 1.2em;
+    padding: 0.4em;
+
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        box-shadow: 0 0 0.1em #666 inset;
+    }
+
+    &:active {
+        box-shadow: 0 0 0.2em #666 inset;
+    }
+
+    &:visited {
+        color: #ffffff;
+    }
+
+    .cta {
+        color: $ted-red !important;
+    }
+}

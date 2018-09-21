@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  {% include page/links.html %}
+  {% if page.style -%}
+    <style type="text/css">{{ page.style }}</style>
+  {%- endif %}
+  {% if page.script.size > 0 %}
+    <script type="application/javascript">{{ page.script }}</script>
+  {% endif %}
+</head>
+<body>
+  <div id="content">
+    {% include page/header.html %}
+    <main>
+      {{ content }}
+    </main>
+    {% include page/footer.html %}
+  </div>
+  <div id="overlay"></div>
+</body>
+</html>

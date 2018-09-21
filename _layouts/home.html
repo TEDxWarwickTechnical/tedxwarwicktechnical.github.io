@@ -1,0 +1,34 @@
+---
+layout: raw
+---
+
+<style type="text/css">
+{% for segment in page.segments %}
+    {%- assign image = segment.image %}
+    #segment-{{ forloop.index0 }} {
+    {% if image -%}
+        background-image: url({{ image.source }});
+        background-position: 0% {{ image.position | default: 50 }}%;
+    {%- else -%}
+        background-color: {{ segment.color | default: "#999999" }};
+    {%- endif %}
+    }
+{% endfor %}
+</style>
+
+<!-- <img src="{{ "/assets/img/banner.png" | relative_url }}"> -->
+
+<div class="container">
+    {{ content }}
+</div>
+
+{% for segment in page.segments -%}
+{%- assign image = segment.image -%}
+<div class="segment" id="segment-{{ forloop.index0 }}">
+    <div class="container">
+        <h2>{{ segment.heading }}</h2>
+        {% if segment.subheading and segment.subheading != "" %}<h3>{{ segment.subheading }}</h3>{% endif %}
+        <a class="button" href="{{ segment.page }}">{{ segment.button }}</a>
+    </div>
+</div>
+{%- endfor %}

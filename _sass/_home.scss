@@ -1,0 +1,40 @@
+.segment {
+  // $perspective: 1;
+  // $height: 200px;
+  // @include parallax($perspective, $height);
+
+  height: 200px;
+
+  .fg {
+    // @include parallax-fg($height);
+  }
+
+  .bg {
+    // @include parallax-bg($perspective, -1);
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  h2, h3 {
+    text-align: center;
+    justify-content: center;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    text-shadow: 0 0 0.2em #666666;
+  }
+
+  .container {
+    height: 100%;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cta {
+
+  }
+}

@@ -1,0 +1,86 @@
+title: TEDxWarwick
+permalink: /:title
+
+
+#############
+# Renderers #
+#############
+
+markdown: kramdown
+
+kramdown:
+  auto_ids: false
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-sitemap
+
+error_mode: strict
+strict_variables: true
+strict_filters: true
+
+#########
+# Files #
+#########
+
+collections_dir: _collections
+
+collections:
+  events:
+    output: true
+  speakers:
+    output: false
+  partners:
+    output: false
+  forms:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: events
+    values:
+      layout: event
+      nav: events
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - LICENSE
+  - README.md
+  - CNAME
+  - docs/
+
+
+###################
+# Site parameters #
+###################
+
+url: https://neo.tedxwarwick.com
+
+nav:
+  - key: events
+    name: "Events"
+    page: "/events"
+  - key: partners
+    name: "Partners"
+    page: "/partners"
+  - key: recruitment
+    name: "Get Involved"
+    page: "/recruitment"
+  - key: about
+    name: "About"
+    page: "/about"
+
+fb-app-id: "600131706999745"
+fb-page: "TEDxWarwick"
+twitter-handle: "TEDxWarwick"
+
+repo: "TEDxWarwickTechnical/tedxwarwicktechnical.github.io"

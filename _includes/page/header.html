@@ -1,0 +1,21 @@
+<header>
+    <div class="container">
+        <div class="brand">
+            <a href="{{ "/" | relative_url }}">
+                <img src="{{ "/assets/img/brand/header-logo.svg" | relative_url }}">
+            </a>
+        </div>
+        <div class="nav">
+            <div class="cta">
+                {% include components/cta.html %}
+            </div>
+            <nav>
+                <ul>
+                    {% for item in site.nav %}
+                        <li><a href="{{ item.page | relative_url }}" title="{{ item.name }}"{% if item.key == page.nav %} class="current"{% endif %}>{{ item.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
