@@ -5,9 +5,18 @@
   {% if page.style -%}
     <style type="text/css">{{ page.style }}</style>
   {%- endif %}
-  {% if page.script.size > 0 %}
-    <script type="application/javascript">{{ page.script }}</script>
-  {% endif %}
+  
+  {%- assign scripts = '' | split: '' -%}
+  {%- if page.scripts -%}
+    {%- assign scripts = scripts | concat: page.scripts -%}
+  {%- endif -%}
+  {%- if layout.scripts -%}
+    {%- assign scripts = scripts | concat: layout.scripts -%}
+  {%- endif -%}
+  {% for script in scripts -%}
+    {% assign scriptFile = '/assets/js/' | append: script | append: '.js' | relative_url -%}
+    <script type="application/javascript" src="{{ scriptFile }}"></script>
+  {%- endfor %}
 </head>
 <body>
   <div id="content">

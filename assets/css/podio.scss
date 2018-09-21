@@ -12,7 +12,6 @@
  ********/
 @import 'text';
 @import 'layout';
-@import 'parallax';
 @import 'elevate';
 
 /**************
@@ -20,18 +19,3 @@
  **************/
 @import 'buttons';
 @import 'cards';
-@import 'popover';
-@import 'maps';
-
-/**************
- * Page parts *
- **************/
-@import 'header';
-@import 'footer';
-
-/**************
- * Page types *
- **************/
-@import 'home';
-@import 'event';
-@import 'form';

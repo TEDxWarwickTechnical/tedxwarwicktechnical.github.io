@@ -48,6 +48,10 @@ const x = {
     }
   },
 
+  popover: param => {
+    // if (param instanceof string)
+  },
+
   initFuncs: [
     () => {
       const header = document.getElementsByTagName('header')[0];
@@ -55,6 +59,8 @@ const x = {
       const threshold = document.querySelector('header .cta').clientHeight;
       const content = document.getElementById('content');
       const padding = header.offsetHeight - threshold;
+
+      x.extend({ headerOverlap: threshold });
 
       console.log('padding', padding);
 
