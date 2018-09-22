@@ -1,35 +1,73 @@
 // Remember to override `a` styles from _text.scss
 
-.button {
-    display: inline-block;
-    color: #ffffff;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    border: 1px solid #ccc;
-    font-family: $font-menu;
-    font-size: 1.2em;
-    padding: 0.4em;
+.btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  cursor: pointer;
 
-    cursor: pointer;
+  margin: 0.5rem;
+  border-radius: 0.25rem;
 
-    &:focus {
-        outline: none;
-    }
+  transition: hover-transition(background-color);
 
-    &:hover {
-        box-shadow: 0 0 0.1em #666 inset;
-    }
+  border: none;
+  color: $color-btn-primary;
 
-    &:active {
-        box-shadow: 0 0 0.2em #666 inset;
-    }
+  &:focus {
+    outline: none;
+  }
+}
 
-    &:visited {
-        color: #ffffff;
-    }
+.btn-primary {
+  padding: 0.6rem 0.8rem;
 
-    .cta {
-        color: $ted-red !important;
-    }
+  background-color: $color-btn-primary;
+  color: white !important;
+
+  @include elevate(2);
+  transition: hover-transition(background-color),
+              hover-transition(box-shadow);
+
+  &:hover {
+    background-color: transparentize($color-btn-primary, 0.05);
+    border-color: transparentize($color-btn-primary, 0.05);
+    @include elevate(4);
+  }
+
+  &:active {
+    background-color: transparentize($color-btn-primary, 0.2);
+    border-color: transparentize($color-btn-primary, 0.2);
+  }
+}
+
+.btn-outline {
+  $border-width: 1rem / 16;
+  padding: 0.6rem - $border-width 0.8rem - $border-width;
+  border: $border-width solid $color-btn-outline;
+
+  &:hover {
+    background-color: transparentize($color-btn-primary, 0.85);
+  }
+
+  &:active {
+    background-color: transparentize($color-btn-primary, 0.7);
+  }
+
+  &:visited {
+    color: $color-btn-primary;
+  }
+}
+
+.btn-text {
+  padding: 0.6rem 0.3rem;
+
+  &:hover {
+    background-color: transparentize($color-btn-primary, 0.9);
+  }
+
+  &:active {
+    background-color: transparentize($color-btn-primary, 0.8);
+  }
 }

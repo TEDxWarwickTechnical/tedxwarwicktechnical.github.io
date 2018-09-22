@@ -51,8 +51,8 @@ $color-link:                $ted-red;
 
 $color-shadow:              lighten(black, 65%);
 
-// TODO: Remove this
-$color-unfinished:          rgba($ted-red, 0.3);
+$color-btn-outline:         $color-muted;
+$color-btn-primary:         $ted-red;
 
 $opacity-hover:             0.15;
 

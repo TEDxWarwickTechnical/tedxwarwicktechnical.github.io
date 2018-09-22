@@ -130,14 +130,3 @@ $ambient-map: (
               #{"#{$penumbra} rgba(0, 0, 0, 0.14)"},
               #{"#{$ambient} rgba(0, 0, 0, 0.12)"};
 }
-
-// @mixin mdc-elevation($z-value) {
-//   box-shadow:
-//     #{"#{$umbra-z-value} #{$umbra-color}"},
-//     #{"#{$penumbra-z-value} #{$penumbra-color}"},
-//     #{$ambient-z-value} $ambient-color;
-// }
-
-@mixin elevate-transition() {
-  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
-}

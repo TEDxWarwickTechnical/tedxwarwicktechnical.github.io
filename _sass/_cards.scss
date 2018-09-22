@@ -4,7 +4,8 @@
   position: relative;
 
   @include elevate(2);
-  @include elevate-transition;
+
+  transition: hover-transition(box-shadow);
 
   cursor: pointer;
 

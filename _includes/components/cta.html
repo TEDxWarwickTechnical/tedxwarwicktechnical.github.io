@@ -1,1 +1,7 @@
-<p>Get your tickets now <a class="button" role="button">Buy tickets</a></p>
+<div>
+  {% for btn in site.cta -%}
+  <a class="btn btn-{{ btn.style | default: primary }}" role="button" href="{{ btn.page | relative_url }}">
+    {{ btn.name }}
+  </a>
+  {%- endfor %}
+</div>

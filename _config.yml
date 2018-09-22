@@ -80,12 +80,17 @@ nav:
   - key: partners
     name: "Partners"
     page: "/partners"
-  - key: recruitment
+  - key: get-involved
     name: "Get Involved"
-    page: "/recruitment"
+    page: "/get-involved"
   - key: about
     name: "About"
     page: "/about"
+
+cta:
+  - name: "Buy Tickets"
+    page: "/tickets"
+    style: primary
 
 fb-app-id: "600131706999745"
 fb-page: "TEDxWarwick"

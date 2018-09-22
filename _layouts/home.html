@@ -5,13 +5,13 @@ layout: raw
 <style type="text/css">
 {% for segment in page.segments %}
   {%- assign image = segment.image %}
-  #segment-{{ forloop.index0 }} {
+  #segment-{{ forloop.index0 }}::before {
   {% if image -%}
     background-image: url({{ image.source }});
-    background-position: 0% {{ image.position | default: 50 }}%;
-  {%- else -%}
-    background-color: {{ segment.color | default: "#999999" }};
+    background-position: 50% {{ image.position | default: 50 }}%;
+    background-size: auto {{ image.zoom | default: 200 }}%;
   {%- endif %}
+    background-color: {{ segment.color | default: "#999999" }};
   }
 {% endfor %}
 </style>
@@ -24,11 +24,14 @@ layout: raw
 
 {% for segment in page.segments -%}
 {%- assign image = segment.image -%}
-<div class="segment" id="segment-{{ forloop.index0 }}">
-  <div class="container">
-    <h2>{{ segment.heading }}</h2>
-    {% if segment.subheading and segment.subheading != "" %}<h3>{{ segment.subheading }}</h3>{% endif %}
-    <a class="button" href="{{ segment.page }}">{{ segment.button }}</a>
+<a class="plain" href="{{ segment.page | relative_url }}">
+  <div class="segment" id="segment-{{ forloop.index0 }}">
+    <div class="container">
+      <h2>{{ segment.heading }}</h2>
+      {% if segment.subheading and segment.subheading != "" -%}
+        <h3>{{ segment.subheading }}</h3>
+      {%- endif %}
+    </div>
   </div>
-</div>
+</a>
 {%- endfor %}

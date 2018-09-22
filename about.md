@@ -4,6 +4,8 @@ title: "About"
 permalink: /about
 ---
 
+<button class="btn btn-text">Text button</button><button class="btn btn-outline">Outline button</button><button class="btn btn-primary">Primary button</button>
+
 # H1 About TEDxWarwick
 
 ## H2 About TEDxWarwick

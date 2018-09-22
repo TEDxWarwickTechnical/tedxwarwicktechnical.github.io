@@ -37,12 +37,9 @@ header {
     text-align: center;
     overflow: none;
 
-    background-color: $color-unfinished;
-
-    h5, button {
-      display: inline-block;
-      box-sizing: border-box;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   nav {
