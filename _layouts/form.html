@@ -6,14 +6,22 @@ scripts:
 
 {{ content }}
 
+{% capture formUrl -%}
+  https://podio.com/webforms/{{ page.podio.app }}/{{ page.podio.form }}
+{%- endcapture %}
+
+{% capture embedUrl -%}
+  {{ formUrl }}?e=true#{{ site.url }}{{ page.url | relative_url }}
+{%- endcapture %}
+
 <div class="form-embed loading" id="podio-webform-wrapper">
-  <iframe class="podio-webform-frame"
-          id="podio-webform"
-          height="200"
-          frameborder="0"
-          scrolling="yes"
-          data-src="https://podio.com/webforms/{{ page.podio.app }}/{{ page.podio.form }}?e=true#{{ site.url }}{{ page.url | relative_url }}">
-  </iframe>
+  <div class="loading-overlay">
+    <h1>Loading</h1>
+    <div class="timeout-content">
+      <a href="{{ formUrl }}" class="btn btn-text">Not working?</a>
+    </div>
+  </div>
+  <iframe class="podio-webform-frame" id="podio-webform" height="200" data-src="{{ embedUrl }}"></iframe>
 </div>
 
 {% comment %}

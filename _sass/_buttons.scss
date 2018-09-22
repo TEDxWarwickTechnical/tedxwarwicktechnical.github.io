@@ -13,7 +13,7 @@
   transition: hover-transition(background-color);
 
   border: none;
-  color: $color-btn-primary;
+  color: $color-btn-primary !important;
 
   &:focus {
     outline: none;

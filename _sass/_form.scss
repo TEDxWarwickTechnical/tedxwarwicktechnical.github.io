@@ -1,18 +1,40 @@
 .form-embed {
   position: relative;
+  border: none;
+
+  .loading-overlay {
+    display: none;
+    padding-top: 2rem;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #444;
+
+    transition: hover-transition(padding-top);
+
+    .timeout-content {
+      visibility: hidden;
+      opacity: 0;
+
+      transition: visibility 0s, hover-transition(opacity);
+    }
+  }
+
+  &.timeout {
+    .loading-overlay {
+      padding-top: 0.5rem;
+
+      .timeout-content {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
 
   &.loading {
-    margin-top: 30px;
+    margin-top: 2rem;
 
-    &::after {
-      @extend h1;
-      content: 'Loading';
+    .loading-overlay {
       margin: 0;
-      padding-top: 50px;
-      letter-spacing: 1px;
-      text-align: center;
-      color: #444;
-
       border-radius: 10px;
 
       display: block;

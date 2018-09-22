@@ -1,24 +1,30 @@
 'use strict';
 
 x.onPageLoad(() => {
-  const iframe = document.getElementById('podio-webform');
+  const wrapper = document.getElementById('podio-webform-wrapper');
+  const frame = document.getElementById('podio-webform');
 
-  iframe.src = iframe.dataset.src;
-  delete iframe.dataset.src;
+  frame.src = frame.dataset.src;
+  delete frame.dataset.src;
 
   window.addEventListener('message', e => {
     if (e.origin !== 'https://podio.com') {
       return false;
     }
 
-    x.resizeFrame(iframe, e);
+    x.resizeFrame(frame, wrapper, e);
   });
+
+  window.setTimeout(() => {
+    if (wrapper.classList.contains('loading')) {
+      wrapper.classList.add('timeout');
+    }
+  }, 5000);
 });
 
 x.extend({
-  resizeFrame: (frame, message) => {
+  resizeFrame: (frame, wrapper, message) => {
     if (!frame.dataset.loaded) {
-      const wrapper = document.getElementById('podio-webform-wrapper');
       wrapper.classList.remove('loading');
       frame.style.paddingTop = x.headerOverlap + 20 + 'px';
       frame.dataset.loaded = true;
