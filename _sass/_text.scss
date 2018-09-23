@@ -14,14 +14,13 @@
   }
 }
 
-h1, h2, h3, h4, h5, h6,
-.sh1, .sh2 {
-  font-family: $font-heading;
-  // margin: 0.4em 0;
+@mixin font($style) {
+  font-family: map-get($font-stacks, $style)
 }
 
 body {
-  font-family: $font-body;
+  @include font(body);
+
   font-size: rem(16);
   line-height: line-steps(5);
   letter-spacing: rem(0.5);
@@ -32,7 +31,9 @@ p {
   margin: line-steps(1) 0;
 }
 
-h1 {
+@mixin h1 {
+  @include font(heading);
+
   font-size: rem(96);
   line-height: line-steps(24);
   letter-spacing: rem(-1.5);
@@ -40,7 +41,9 @@ h1 {
   font-weight: 300;
 }
 
-h2 {
+@mixin h2 {
+  @include font(heading);
+
   font-size: rem(60);
   line-height: line-steps(16);
   letter-spacing: rem(-0.5);
@@ -48,7 +51,9 @@ h2 {
   font-weight: 300;
 }
 
-h3 {
+@mixin h3 {
+  @include font(heading);
+
   font-size: rem(48);
   line-height: line-steps(12);
   letter-spacing: 0;
@@ -56,7 +61,9 @@ h3 {
   font-weight: 400;
 }
 
-h4 {
+@mixin h4 {
+  @include font(heading);
+
   font-size: rem(34);
   line-height: line-steps(9);
   letter-spacing: rem(0.25);
@@ -64,7 +71,9 @@ h4 {
   font-weight: 400;
 }
 
-h5 {
+@mixin h5 {
+  @include font(heading);
+
   font-size: rem(24);
   line-height: line-steps(7);
   letter-spacing: 0;
@@ -72,7 +81,9 @@ h5 {
   font-weight: 400;
 }
 
-h6 {
+@mixin h6 {
+  @include font(heading);
+
   font-size: rem(20);
   line-height: line-steps(6);
   letter-spacing: rem(0.15);
@@ -80,7 +91,9 @@ h6 {
   font-weight: 600;
 }
 
-.sh1 {
+@mixin sh1 {
+  @include font(heading);
+
   font-size: rem(16);
   line-height: line-steps(5);
   letter-spacing: rem(0.15);
@@ -89,7 +102,9 @@ h6 {
   color: $color-muted;
 }
 
-.sh2 {
+@mixin sh2 {
+  @include font(heading);
+
   font-size: rem(14);
   line-height: line-steps(4);
   letter-spacing: rem(0.1);
@@ -98,8 +113,7 @@ h6 {
   color: $color-muted;
 }
 
-small,
-.small {
+@mixin small {
   font-size: rem(14);
   line-height: line-steps(4);
   letter-spacing: rem(0.25);
@@ -108,10 +122,7 @@ small,
   display: block;
 }
 
-button,
-input[type=button],
-input[type=submit],
-.btn {
+@mixin button-text {
   font-size: rem(14);
   line-height: line-steps(4);
   letter-spacing: rem(0.75);
@@ -120,8 +131,7 @@ input[type=submit],
   text-transform: uppercase;
 }
 
-caption,
-.caption {
+@mixin caption {
   font-size: rem(12);
   line-height: line-steps(4);
   letter-spacing: rem(0.4);
@@ -130,7 +140,7 @@ caption,
   color: $color-muted;
 }
 
-.overline {
+@mixin overline {
   font-size: rem(10);
   line-height: line-steps(4);
   letter-spacing: rem(1.5);
@@ -140,16 +150,16 @@ caption,
   text-transform: uppercase;
 }
 
-b, strong {
+@mixin bold {
   font-weight: 700;
 }
 
-i, em {
+@mixin italic {
   font-style: italic;
 }
 
-pre, code {
-  font-family: $font-code;
+@mixin code {
+  @include font(code);
 }
 
 pre {
@@ -159,31 +169,60 @@ pre {
   overflow-x: scroll;
 }
 
-a {
+@mixin link {
   color: inherit;
 
   &:visited, &:active {
     color: inherit;
   }
 
-  &.plain {
-    text-decoration: none;
-  }
-
-  &:hover:not(.plain) {
+  &:hover {
     text-decoration: none;
     color: $color-link;
   }
+}
 
-  &.hot {
-    &, &:hover, &:visited, &:active {
-      color: $color-link;
-    }
+@mixin link-plain {
+  @include link;
+
+  text-decoration: none;
+
+  &:hover {
+    color: inherit;
   }
 }
 
-.muted {
+@mixin link-hot {
+  @include link;
+
+  &, &:hover, &:visited, &:active {
+    color: $color-link;
+  }
+}
+
+@mixin muted {
   color: $color-muted;
+}
+
+$export: true !default;
+@if ($export) {
+  h1 { @include h1 }
+  h2 { @include h2 }
+  h3 { @include h3 }
+  h4 { @include h4 }
+  h5 { @include h5 }
+  h6 { @include h6 }
+  .sh1 { @include sh1 }
+  .sh2 { @include sh2 }
+  small, .small { @include small }
+  // Never export button style, see _buttons.scss
+  .overline { @include overline }
+  a { @include link }
+  a.plain { @include link-plain }
+  a.hot { @include link-hot }
+  b, strong { @include bold }
+  i, em { @include italic }
+  pre, code { @include code }
 }
 
 // Media queries to follow

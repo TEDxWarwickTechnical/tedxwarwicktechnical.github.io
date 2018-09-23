@@ -1,8 +1,9 @@
 footer {
+  @include font(menu);
+
   padding: 0.5em 0;
   color: $color-footer-text;
   background-color: $color-footer;
-  font-family: $font-menu;
   text-align: center;
 
   p {

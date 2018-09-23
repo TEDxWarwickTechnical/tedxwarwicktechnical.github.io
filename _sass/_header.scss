@@ -44,7 +44,8 @@ header {
   }
 
   nav {
-    font-family: $font-menu;
+    @include font(menu);
+    
     text-align: right;
 
     ul {

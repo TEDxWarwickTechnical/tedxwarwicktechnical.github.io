@@ -18,10 +18,12 @@ $font-stack-sans: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
 
 $font-stack-mono: 'Fira Mono', 'Lucida Console', 'Consolas', monospace;
 
-$font-menu:             $font-stack-sans;
-$font-heading:          $font-stack-sans;
-$font-body:             $font-stack-sans;
-$font-code:             $font-stack-mono;
+$font-stacks: (
+  menu:                 $font-stack-sans,
+  heading:              $font-stack-sans,
+  body:                 $font-stack-sans,
+  code:                 $font-stack-mono
+);
 
 $font-size-base:        16px;
 
