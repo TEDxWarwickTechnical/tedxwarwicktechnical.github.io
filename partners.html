@@ -1,0 +1,76 @@
+---
+nav: partners
+title: "Partners"
+---
+
+{%- assign platinumPartners = '' | split: '' -%}
+{%- assign standardPartners = '' | split: '' -%}
+
+{%- for partner in site.partners -%}
+  {%- assign type = partner.type -%}
+  {%- if type == 'platinum' -%}
+    {%- assign platinumPartners = platinumPartners | push: partner -%}
+  {%- elsif type == 'standard' -%}
+    {%- assign standardPartners = standardPartners | push: partner -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- assign platinumPartners = platinumPartners | sort: 'title' -%}
+{%- assign standardPartners = standardPartners | sort: 'title' -%}
+
+<h2>Our Partners</h2>
+<p>TEDxWarwick would not be able to put on our regular events without the
+   continued support of our partners. If you are interested in partnering with
+   us, please get in touch at <a href="mailto:partnerships@tedxwarwick.com">
+   partnerships@tedxwarwick.com</a>, and a member of our Corporate Relations
+   team will help tailor a package to your needs.</p>
+
+
+{% if platinumPartners.size > 0 -%}
+  <section id="platinum-partners">
+    <h3>Platinum Partner{% if platinumPartners.size > 1 %}2{% endif %}</h3>
+    {% for partner in platinumPartners -%}
+      <div class="partner-large">
+        {%- assign attrKeys = '' | split: '' -%}
+        {%- assign attrVals = '' | split: '' -%}
+        {%- assign attrKeys = attrKeys | push: 'class' -%}
+        {%- assign attrVals = attrVals | push: 'logo-inset' -%}
+        {%- assign img = 'partners/' | append: partner.slug | append: '/logo' -%}
+        {% include img.html
+                   img=img
+                   imgDefault='partners/default/logo'
+                   alt=partner.title
+                   attrKeys=attrKeys
+                   attrVals=attrVals
+         %}
+        {{ partner.content | markdownify }}
+      </div>
+    {%- endfor %}
+  </section>
+{%- endif %}
+
+{% if standardPartners.size > 0 -%}
+  <section id="standard-partners">
+    <h4>Partners</h4>
+    <div class="partners">
+      {% for partner in standardPartners -%}
+        <a href="{{ partner.website | default: '#' }}" target="_blank" class="plain">
+          <div class="card partner-card">
+            {%- assign attrKeys = '' | split: '' -%}
+            {%- assign attrVals = '' | split: '' -%}
+            {%- assign attrKeys = attrKeys | push: 'class' -%}
+            {%- assign attrVals = attrVals | push: 'logo' -%}
+            {%- assign img = 'partners/' | append: partner.slug | append: '/logo' -%}
+            {% include img.html
+                       img=img
+                       imgDefault='partners/default/logo'
+                       alt=partner.title
+                       attrKeys=attrKeys
+                       attrVals=attrVals
+             %}
+          </div>
+        </a>
+      {%- endfor %}
+    </div>
+  </section>
+{%- endif %}

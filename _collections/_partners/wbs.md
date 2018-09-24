@@ -1,3 +1,0 @@
----
-title: Warwick Business School
----

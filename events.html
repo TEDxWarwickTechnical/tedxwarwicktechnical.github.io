@@ -28,12 +28,10 @@ title: "Events"
   {%- endunless %}
   <a href="{{ '/events/' | append: event.slug | relative_url }}" class="plain">
     <div class="card event-card">
-      <!-- {% assign imgBase = "/assets/img/events/" | append: event.slug | append: "/" | append: speaker.slug | relative_url -%} -->
-      <!-- <img class="headshot" src="{{ imgBase }}.png" srcset="{{ imgBase }}@2x.png 2x" alt="{{ speaker.title }}"> -->
       {%- assign attrKeys = '' | split: '' -%}
       {%- assign attrVals = '' | split: '' -%}
       {%- assign attrKeys = attrKeys | push: 'class' -%}
-      {%- assign attrVals = attrVals | push: 'headshot img' -%}
+      {%- assign attrVals = attrVals | push: 'headshot' -%}
       {%- assign img = 'events/' | append: event.slug | append: '/thumbnail' -%}
       {% include img.html
                  img=img
