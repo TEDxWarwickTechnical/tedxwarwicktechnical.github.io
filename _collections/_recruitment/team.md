@@ -147,7 +147,7 @@ sections:
 
       **In your application, please include a blog entry (max 300 words) on any
       topic you are passionate about.  We want to hear your personal voice, but
-      be mindful to present your opinions objectively!
+      be mindful to present your opinions objectively!**
 
   - name: technical
     label: Technical
