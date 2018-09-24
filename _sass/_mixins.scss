@@ -13,3 +13,7 @@
     @content;
   }
 }
+
+@mixin muted {
+  color: $color-muted;
+}

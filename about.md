@@ -4,6 +4,22 @@ title: "About"
 permalink: /about
 ---
 
+**Unordered list**
+
+- Thing one
+- Thing two
+  - Extra thing one
+  - Extra thing two
+- Thing three
+
+**Ordered list**
+
+1. Thing one
+2. Thing two
+   1. Extra thing one
+   2. Extra thing two
+3. Thing three
+
 <button class="btn btn-text">Text button</button><button class="btn btn-outline">Outline button</button><button class="btn btn-primary">Primary button</button>
 
 # H1 About TEDxWarwick

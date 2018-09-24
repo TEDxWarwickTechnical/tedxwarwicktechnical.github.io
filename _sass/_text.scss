@@ -200,8 +200,28 @@ pre {
   }
 }
 
-@mixin muted {
-  color: $color-muted;
+@mixin list {
+  padding-left: 2rem;
+
+  & & {
+    margin-top: 0.25rem;
+  }
+}
+
+@mixin list-element-unordered {
+  list-style: disc;
+
+  &:not(:first-of-type) {
+    margin-top: 0.25rem;
+  }
+}
+
+@mixin list-element-ordered {
+  list-style: decimal;
+
+  &:not(:first-of-type) {
+    margin-top: 0.25rem;
+  }
 }
 
 $export: true !default;
@@ -223,6 +243,9 @@ $export: true !default;
   b, strong { @include bold }
   i, em { @include italic }
   pre, code { @include code }
+  ul:not(.plain), ol:not(.plain) { @include list }
+  ul:not(.plain) > li { @include list-element-unordered }
+  ol:not(.plain) > li { @include list-element-ordered }
 }
 
 // Media queries to follow
