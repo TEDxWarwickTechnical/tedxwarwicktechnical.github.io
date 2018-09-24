@@ -100,9 +100,6 @@ nav:
     page: "/about"
 
 cta:
-  - name: "Buy Tickets"
-    page: "/tickets"
-    style: primary
 
 fb-app-id: "600131706999745"
 fb-page: "TEDxWarwick"
