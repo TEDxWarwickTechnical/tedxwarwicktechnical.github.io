@@ -127,6 +127,27 @@ sections:
 
   - name: publications
     label: Publications
+    description: |
+      We successfully introduced the TEDxWarwick Magazine in 2014 and have
+      issued it every year since. Therefore, we are looking for a few team
+      members to join our publications team, which is responsible for editing
+      and curating the content of the TEDxWarwick 2019 magazine and blog. They
+      include information and articles about the main event, history of the
+      society, salon events, past and future speakers -- basically anything
+      that might be relevant to TEDxWarwick. We are looking for someone who:
+
+      - Has a strong understanding of the TED ethos and a vision for
+        TEDxWarwick Magazine
+      - Has strong writing skills and passion for blogging
+      - Has excellent time management skills and is able to work under pressure
+      - Has good communication skills for liaising with the Technical,
+        Creative, Marketing and other teams in order to achieve great results
+      - Preferably (although not necessarily) has some previous experience in
+        blogging, writing articles for a magazine or a newspaper
+
+      **In your application, please include a blog entry (max 300 words) on any
+      topic you are passionate about.  We want to hear your personal voice, but
+      be mindful to present your opinions objectively!
 
   - name: technical
     label: Technical
