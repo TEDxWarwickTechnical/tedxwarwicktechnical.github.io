@@ -1,19 +1,6 @@
 ---
 nav: events
 title: "Events"
-script: |
-  'use strict';
-
-  x.onPageLoad(() => {
-    const cards = document.getElementsByClassName('event-card');
-
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        window.location.href = './' + card.dataset.slug;
-      })
-    });
-  });
-
 ---
 
 {%- assign events = site.events | sort: 'time.start' -%}
@@ -27,14 +14,11 @@ script: |
   {%- if currentEvents -%}
     {%- if site.time > event.time.end -%}
       {%- assign currentEvents = false -%}
-
-      {%- if prevYear == 0 -%}
-        <p>There are currently no scheduled events in the future. Check back
-           later for more.</p>
-      {%- endif -%}
-
+      {% if prevYear == 0 -%}
+        <p>We haven't announced any of our future events yet. Stay tuned for
+           further details.</p>
+      {%- endif %}
       <h3>Past events</h3>
-
       {%- assign prevYear = 0 -%}
     {%- endif -%}
   {%- endif -%}
