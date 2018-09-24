@@ -82,6 +82,7 @@
     {% include page/footer.html %}
   </div>
   <div id="overlay"></div>
+  {% comment %}
   {% for speaker in speakers -%}
     <div id="speaker-popover-{{ speaker.slug }}" class="popover">
       <h4>{{ speaker.title }}</h4>
@@ -97,6 +98,7 @@
       {%- endif %}
     </div>
   {%- endfor %}
+  {% endcomment %}
   {% if page.script.size > 0 -%}
     <script type="application/javascript">{{ page.script }}</script>
   {%- endif %}
