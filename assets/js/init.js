@@ -29,6 +29,23 @@ const x = {
         }
       };
     }
+
+    console.log('Applying for a technical role?', {
+      success: 'Include x.acceptMe() in your application',
+    });
+
+    x.extend({
+      insanityCount: 0,
+      acceptMe: () => {
+        if (x.insanityCount++ - 2 < 0 ? 0 : x.insanityCount - 3) {
+          console.log('"Don’t Panic."');
+          delete x.insanityCount;
+          delete x.acceptMe;
+        } else {
+          console.log('Think you\'re clever eh? Let\'s test the definition of insanity.');
+        }
+      },
+    });
   },
 
   extend: extensions => {

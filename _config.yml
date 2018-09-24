@@ -10,6 +10,7 @@ markdown: kramdown
 
 kramdown:
   auto_ids: false
+  parse_block_html: true
 
 sass:
   style: compressed
@@ -31,12 +32,16 @@ collections_dir: _collections
 collections:
   events:
     output: true
-  speakers:
-    output: false
-  partners:
-    output: false
   forms:
     output: true
+  partners:
+    output: false
+  recruitment:
+    output: true
+    permalink: /get-involved/:name
+  speakers:
+    output: false
+
 
 defaults:
   - scope:
@@ -51,6 +56,13 @@ defaults:
       type: forms
     values:
       layout: form
+
+  - scope:
+      path: ""
+      type: recruitment
+    values:
+      layout: recruitment
+      nav: recruitment
 
   - scope:
       path: ""
@@ -80,7 +92,7 @@ nav:
   - key: partners
     name: "Partners"
     page: "/partners"
-  - key: get-involved
+  - key: recruitment
     name: "Get Involved"
     page: "/get-involved"
   - key: about

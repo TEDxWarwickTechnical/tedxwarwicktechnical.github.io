@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+{%- capture applyBtn -%}
+  <a class="btn btn-primary" href="{{ '/forms/' | append: page.form | relative_url }}">Apply now</a>
+{%- endcapture -%}
+
+{{ content }}
+{{ applyBtn }}
+
+{% for section in page.sections -%}
+  <section id="section-{{ section.name }}">
+    <h3>{{ section.label }}</h3>
+    {% if section.description -%}
+      {{ section.description | markdownify }}
+    {%- else -%}
+      <p>Details coming soon, stay tuned!</p>
+    {%- endif %}
+    {{ applyBtn }}
+  </section>
+{%- endfor %}

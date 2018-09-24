@@ -28,7 +28,7 @@ body {
 }
 
 p {
-  margin: line-steps(1) 0;
+  margin: line-steps(1) 0 line-steps(3);
 }
 
 @mixin h1 {
@@ -202,9 +202,11 @@ pre {
 
 @mixin list {
   padding-left: 2rem;
+  margin-bottom: line-steps(3);
 
   & & {
-    margin-top: 0.25rem;
+    margin-top: line-steps(1);
+    margin-bottom: 0;
   }
 }
 
@@ -212,7 +214,7 @@ pre {
   list-style: disc;
 
   &:not(:first-of-type) {
-    margin-top: 0.25rem;
+    margin-top: line-steps(1);
   }
 }
 
@@ -220,7 +222,7 @@ pre {
   list-style: decimal;
 
   &:not(:first-of-type) {
-    margin-top: 0.25rem;
+    margin-top: line-steps(1);
   }
 }
 
