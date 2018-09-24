@@ -45,13 +45,12 @@ $color-footer-text:         lighten(black, 40%);
 
 $color-header:              white;
 $color-header-underscore:   $color-footer;
+$color-header-shadow:       transparentize(black, 0.6);
 
 $color-nav:                 black;
 $color-nav-active:          $ted-red;
 
 $color-link:                $ted-red;
-
-$color-shadow:              lighten(black, 65%);
 
 $color-btn-outline:         $color-muted;
 $color-btn-primary:         $ted-red;

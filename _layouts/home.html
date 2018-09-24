@@ -14,9 +14,11 @@ layout: raw
     background-color: {{ segment.color | default: "#999999" }};
   }
 {% endfor %}
-</style>
 
-<!-- <img src="{{ "/assets/img/banner.png" | relative_url }}"> -->
+  footer {
+    margin-top: 0;
+  }
+</style>
 
 <div class="container">
   {{ content }}

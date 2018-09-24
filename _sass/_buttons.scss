@@ -73,7 +73,6 @@
 }
 
 $export: true !default;
-
 @if ($export) {
   .btn { @include btn }
   .btn-primary { @include btn-primary }

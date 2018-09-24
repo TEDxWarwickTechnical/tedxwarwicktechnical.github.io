@@ -1,10 +1,12 @@
 header {
-  $bottom-border-size: 0;
+  $bottom-border-size: 1px;
 
   height: 120px;
   background-color: $color-header;
   border-bottom: $bottom-border-size solid $color-header-underscore;
-  box-shadow: 0 1px 3px $color-shadow;
+
+  transition: hover-transition(border-bottom),
+              hover-transition(box-shadow);
 
   .container {
     height: 100%;
@@ -45,7 +47,7 @@ header {
 
   nav {
     @include font(menu);
-    
+
     text-align: right;
 
     ul {
@@ -56,7 +58,6 @@ header {
 
     li {
       display: block;
-      margin-bottom: $bottom-border-size;
     }
 
     @mixin underscore-transition {
@@ -95,7 +96,7 @@ header {
 
       /**
        * Prevents slight change in positioning with font-weight change
-       * https://stackoverflow.com/a/32570813/1813169
+       * https://stackoverflow.com/a/20249560
        */
       &::after {
         content: attr(title);
@@ -109,11 +110,13 @@ header {
   }
 
   &.header-small {
+    box-shadow: 0 1px 3px $color-header-shadow;
+    border-bottom: 0 solid transparent;
+
     height: inherit;
     position: fixed;
     top: 0;
     z-index: 100;
-    // box-shadow: 0 0 5px #666;
 
     .brand img {
       height: 38px;

@@ -28,7 +28,8 @@
     // All form fields
     .form-group {
       input,
-      textarea {
+      textarea,
+      select {
         border-width: 1px;
         transition: hover-transition(border);
         // border-color: $color-muted;
@@ -39,18 +40,21 @@
       }
 
       input:focus,
-      textarea:focus {
+      textarea:focus,
+      select:focus {
         border-width: 2px;
         // border-color: black;
       }
 
       input:hover:valid,
-      textarea:hover:valid {
+      textarea:hover:valid,
+      select:hover:valid {
         // border-color: black;
       }
 
       input:invalid,
-      textarea:invalid {
+      textarea:invalid,
+      select:invalid {
         border-width: 2px;
         border-color: $ted-red;
       }
@@ -150,5 +154,11 @@
       @include btn;
       @include btn-primary;
     }
+  }
+}
+
+.container {
+  .webforms__success-message p {
+    color: black;
   }
 }
