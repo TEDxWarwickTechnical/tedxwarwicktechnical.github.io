@@ -75,8 +75,6 @@ const x = {
 
       x.extend({ headerOverlap: threshold });
 
-      console.log('padding', padding);
-
       let ticking = false;
       let smallHeader = false;
       let wasSmallHeader = false;
