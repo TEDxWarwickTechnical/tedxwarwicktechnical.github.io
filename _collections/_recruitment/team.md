@@ -124,6 +124,25 @@ sections:
 
   - name: operations
     label: Operations
+    description: |
+      The Operations team is responsible for the flawless execution of
+      TEDxWarwick 2019. This includes, and is not limited to, venue, catering,
+      ticketing and volunteer management. You will be working closely with the
+      other TEDxWarwick teams to ensure that all logistics and operations are
+      in order. An Operations team member must be able to communicate
+      effectively with service providers, have a great attention to detail and
+      be able to deal with unexpected problems. Due to the nature of the work,
+      we are looking for team members who must be able to dedicate large
+      amounts of time in the weeks leading up to the event. We are looking for
+      team members who:
+
+      - Have strong organisational skills, preferably with previous experience
+        in organising events
+      - Have excellent attention to detail
+      - Have strong communication skills
+      - Are flexible, passionate, conscientious, and are willing to take the
+        initiative
+
 
   - name: publications
     label: Publications
