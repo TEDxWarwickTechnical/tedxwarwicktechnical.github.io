@@ -83,7 +83,7 @@ exclude:
 # Site parameters #
 ###################
 
-url: https://neo.tedxwarwick.com
+url: https://www.tedxwarwick.com
 
 nav:
   - key: events

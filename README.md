@@ -1,6 +1,6 @@
 # TEDxWarwick's Website
 
-Currently hosted at: [neo.tedxwarwick.com](https://neo.tedxwarwick.com/)
+Currently hosted at: [www.tedxwarwick.com](https://www.tedxwarwick.com/)
 
 ## License
 
