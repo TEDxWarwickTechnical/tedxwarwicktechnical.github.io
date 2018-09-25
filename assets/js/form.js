@@ -37,17 +37,5 @@ x.extend({
     let [ senderId, height, error ] = message.data.split(':');
 
     frame.style.height = parseInt(height, 10) + x.headerOverlap + 20 + 'px';
-
-    // Scroll to iframe if there is an error message
-    // if (error === 'true') {
-    //   let posY = 0;
-    //
-    //   while (iframe !== null){
-    //     posY += iframe.offsetTop;
-    //     iframe = iframe.offsetParent;
-    //   }
-    //
-    //   window.scrollTo(0, posY);
-    // }
   },
 });
