@@ -81,7 +81,7 @@ header {
       @mixin active {
         color: $ted-red !important;
         border-bottom-width: 0.25em;
-        padding-bottom: calc(1em - 0.25em);
+        padding-bottom: 1em - 0.25em;
       }
 
       &:hover {
