@@ -24,6 +24,10 @@ header {
     img {
       flex: 1;
       height: 102px;
+
+      // MS Edge doesn't like unbounded SVG images.
+      // This value was derived empirically using Chrome 69.
+      max-width: 501px;
     }
   }
 
@@ -120,6 +124,10 @@ header {
 
     .brand img {
       height: 38px;
+
+      // MS Edge doesn't like unbounded SVG images.
+      // This value was derived empirically using Chrome 69.
+      max-width: 187px;
     }
 
     .nav {
