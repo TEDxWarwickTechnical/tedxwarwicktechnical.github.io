@@ -22,4 +22,9 @@ segments:
   - heading: "Partner with us"
     subheading: ""
     page: /partners
+    color: "#05082f"
+    image:
+      source: "https://farm1.staticflickr.com/891/27186722738_03e2583791_k_d.jpg"
+      position: 29
+      zoom: 450
 ---
