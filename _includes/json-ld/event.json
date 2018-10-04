@@ -1,9 +1,11 @@
+{%- capture newline %}
+{% endcapture -%}
 {%- assign event = site.events | where: "slug", include.event | first -%}
 {
     "@context": "http://schema.org",
     "@type": "Event",
     "name": "{{ site.data["event-types"][event.type].name }}: {{ event.title }}",
-    "description": "{{ event.description | strip | smartify }}",
+    "description": "{{ event.description | strip | replace: newline, ' ' | smartify }}",
     "startDate": "{{ event.time.start | date_to_xmlschema }}",
     "endDate": "{{ event.time.end | date_to_xmlschema }}",
     "location": {% include json-ld/location.json location=event.location %},
