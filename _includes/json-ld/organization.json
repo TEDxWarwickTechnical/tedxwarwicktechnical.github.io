@@ -3,7 +3,7 @@
     "@type": "Organization",
     "name": "TEDxWarwick",
     "url": "{{ site.url }}",
-    "logo": "http://placehold.it/112x112.png?text=TEDxWarwick",
+    "logo": "{{ site.url }}/assets/img/brand/google-logo.png",
     "sameAs": [
         "https://www.facebook.com/{{ site.fb-page }}",
         "https://twitter.com/{{ site.twitter-handle }}"
