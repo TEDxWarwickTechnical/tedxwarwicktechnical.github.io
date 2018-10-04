@@ -24,7 +24,7 @@ segments:
     page: /partners
     color: "#05082f"
     image:
-      source: "https://farm1.staticflickr.com/891/27186722738_03e2583791_k_d.jpg"
-      position: 29
-      zoom: 450
+      source: "https://farm8.staticflickr.com/7609/16758373825_901b4ad626_k_d.jpg"
+      position: 34
+      zoom: 500
 ---
