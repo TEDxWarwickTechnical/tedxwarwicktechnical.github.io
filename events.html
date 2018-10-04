@@ -23,7 +23,7 @@ title: "Events"
     {%- endif -%}
   {%- endif -%}
 
-  {% unless year == prevYear -%}
+  {% unless year == prevYear or currentEvents -%}
     <h4>{{ year }}</h4>
   {%- endunless %}
   <a href="{{ '/events/' | append: event.slug | relative_url }}" class="plain">

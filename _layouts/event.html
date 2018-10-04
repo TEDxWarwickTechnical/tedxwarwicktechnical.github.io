@@ -37,9 +37,9 @@
       <div class="container">
         <h2>{{ page.title }}</h2>
         {{ content }}
-        {% if speakers.size > 0 -%}
         <section id="speakers">
           <h4>The speakers</h4>
+          {% if speakers.size > 0 -%}
           <div class="speakers">
             {% for speaker in speakers -%}
             <div class="card" data-slug="{{ speaker.slug }}">
@@ -66,8 +66,10 @@
             </div>
             {% endfor %}
           </div>
+          {%- else -%}
+          <div class="sh1">We haven't announced any speakers for this event yet. Stay tuned for further details!</div>
+          {%- endif %}
         </section>
-        {%- endif %}
         {% if page.location -%}
         {%- assign location = site.data.locations[page.location] -%}
         <section id="location">
