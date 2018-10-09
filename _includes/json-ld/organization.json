@@ -1,11 +1,12 @@
 {
-    "@context": "http://schema.org",
-    "@type": "Organization",
-    "name": "TEDxWarwick",
-    "url": "{{ site.url }}",
-    "logo": "{{ site.url }}/assets/img/brand/google-logo.png",
-    "sameAs": [
-        "https://www.facebook.com/{{ site.fb-page }}",
-        "https://twitter.com/{{ site.twitter-handle }}"
-    ]
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "TEDxWarwick",
+  "url": "{{ site.url }}",
+  "logo": "{{ '/assets/img/brand/google-logo.png' | absolute_url }}",
+  "sameAs": [
+    "https://www.facebook.com/{{ site.fb-page }}",
+    "https://twitter.com/{{ site.twitter-handle }}",
+    "https://www.instagram.com/{{ site.instagram-handle }}"
+  ]
 }

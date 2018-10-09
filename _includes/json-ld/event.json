@@ -1,50 +1,58 @@
 {%- capture newline %}
 {% endcapture -%}
-{%- assign event = site.events | where: "slug", include.event | first -%}
-{
-    "@context": "http://schema.org",
-    "@type": "Event",
-    "name": "{{ site.data["event-types"][event.type].name }}: {{ event.title }}",
-    "description": "{{ event.description | strip | replace: newline, ' ' | smartify }}",
-    "startDate": "{{ event.time.start | date_to_xmlschema }}",
-    "endDate": "{{ event.time.end | date_to_xmlschema }}",
-    "location": {% include json-ld/location.json location=event.location %},
-    "images": [
+{%- assign pageUrl = page.url | absolute_url -%}
 
-    ],
-    "offers": [
-        {% for ticket in event.tickets -%}
-        {
-            "@type": "Offer",
-            "url": "{{ ticket.url }}",
-            "price": "{{ ticket.price }}",
-            "name": "{{ ticket.name }}",
-            "availability": "http://schema.org/{% if ticket.soldOut %}SoldOut{% else %}InStock{% endif %}",
-            {%- if ticket.saleStart %}
-            "validFrom": "{{ ticket.saleStart | date_to_xmlschema }}",
-            {%- endif %}
-            {%- if ticket.saleEnd -%}
-                {%- assign saleEnd = ticket.saleEnd -%}
-            {%- else -%}
-                {%- assign saleEnd = page.time.end -%}
-            {%- endif %}
-            "validThrough": "{{ saleEnd | date_to_xmlschema }}",
-            "priceCurrency": "GBP"
-        }
-        {%- unless forloop.last %},{% endunless -%}
-        {% endfor %}
-    ],
-    "performer": [
-        {% for speaker in include.speakers -%}
-        {
-            "@type": "Person",
-            {%- if speaker.organisation %}
-            "worksFor": "{{ speaker.organisation }}",
-            {%- endif %}
-            "name": "{{ speaker.title }}",
-            "image": "{{ site.url }}{{ "/assets/img/speakers" | relative_url }}/{{ page.slug }}/{{ speaker.slug }}.png"
-        }
-        {%- unless forloop.last %},{% endunless -%}
-        {% endfor %}
-    ]
+{%- assign event = site.events | where: 'slug', include.event | first -%}
+{
+  "@context": "http://schema.org",
+  "@type": "Event",
+  "name": "{{ site.data['event-types'][event.type].name }}: {{ event.title }}",
+  "description": "{{ event.description | strip | replace: newline, ' ' | smartify }}",
+  "startDate": "{{ event.time.start | date_to_xmlschema }}",
+  "endDate": "{{ event.time.end | date_to_xmlschema }}",
+  "location": {% include json-ld/location.json location=event.location %},
+  "image": [
+    {% assign images = 'icon banner' | split: ' ' -%}
+    {% for img in images -%}
+      {%- capture imgPath = %}/assets/img/events/{{ event.slug }}/{{ img }}.png{% endcapture -%}
+      "{{ imgPath | absolute_url }}"
+      {%- unless forloop.last %},{% endunless -%}
+    {%- endfor %}
+  ],
+  "offers": [
+    {% for ticket in event.tickets -%}
+    {
+      "@type": "Offer",
+      "url": "{{ ticket.url | default: pageUrl }}",
+      "price": "{{ ticket.price }}",
+      "name": "{{ ticket.name }}",
+      "availability": "http://schema.org/{% if ticket.soldOut %}SoldOut{% else %}InStock{% endif %}",
+      {%- if ticket.saleStart %}
+      "validFrom": "{{ ticket.saleStart | date_to_xmlschema }}",
+      {%- endif %}
+      {%- if ticket.saleEnd -%}
+        {%- assign saleEnd = ticket.saleEnd -%}
+      {%- else -%}
+        {%- assign saleEnd = page.time.end -%}
+      {%- endif %}
+      "validThrough": "{{ saleEnd | date_to_xmlschema }}",
+      "priceCurrency": "GBP"
+    }
+    {%- unless forloop.last %},{% endunless -%}
+    {% endfor %}
+  ],
+  "performer": [
+    {% for speaker in include.speakers -%}
+    {%- capture imgPath %}/assets/img/speakers/{{ event.slug }}/{{ speaker.slug }}.png{% endcapture -%}
+    {
+      "@type": "Person",
+      {%- if speaker.organisation %}
+      "worksFor": "{{ speaker.organisation }}",
+      {%- endif %}
+      "name": "{{ speaker.title }}",
+      "image": "{{ imgPath | absolute_url }}"
+    }
+    {%- unless forloop.last %},{% endunless -%}
+    {% endfor %}
+  ]
 }

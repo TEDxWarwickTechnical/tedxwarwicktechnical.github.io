@@ -1,0 +1,41 @@
+{%- if include.pages -%}
+  {%- assign pages = include.pages -%}
+  {%- assign names = include.names -%}
+{%- else -%}
+  {%- assign pages = '' | split: '' -%}
+  {%- assign names = '' | split: '' -%}
+
+  {%- if page.breadcrumbs -%}
+    {%- for item in breadcrumbs -%}
+      {%- assign pages = pages | push: item.page -%}
+      {%- assign names = names | push: item.name -%}
+    {%- endfor -%}
+  {%- elsif page.title -%}
+    {%- unless page.manualBreadcrumbs or layout.manualBreadcrumbs -%}
+      {%- assign pages = pages | push: page.url -%}
+      {%- assign names = names | push: page.title -%}
+    {%- endunless -%}
+  {%- endif -%}
+{%- endif -%}
+
+{% if pages.size > 0 -%}
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {% for page in pages -%}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "item": {
+        "@id": "{{ page | absolute_url }}",
+        "name": "{{ names[forloop.index0] }}"
+      }
+    }
+    {%- unless forloop.last %},{% endunless -%}
+    {% endfor %}
+  ]
+}
+{%- else -%}
+{}
+{%- endif %}
