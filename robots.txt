@@ -1,5 +1,5 @@
 ---
-layout: false
+layout: null
 ---
 
 User-agent: *
@@ -11,3 +11,6 @@ sitemap: {{ '/sitemap.xml' | absolute_url }}
 
 disallow: {{ '/assets' | relative_url }}
 disallow: {{ '/forms' | relative_url }}
+
+User-agent: Twitterbot
+allow: {{ '/assets/img' | relative_url }}
