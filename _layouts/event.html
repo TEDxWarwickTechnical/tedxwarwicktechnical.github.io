@@ -1,3 +1,7 @@
+---
+manualBreadcrumbs: true
+---
+
 {%- assign speakers = '' | split: '' -%}
 {%- assign speakerKeys = page.speakers | uniq -%}
 {%- assign numSpeakers = speakerKeys | size -%}
@@ -21,11 +25,30 @@
   {%- endunless -%}
 {%- endfor -%}
 
+{%- capture newline %}
+{% endcapture -%}
+
+{%- capture bcPages -%}
+/events
+/events/{{ page.slug }}
+{%- endcapture -%}
+
+{%- capture bcNames -%}
+Events
+{{ page.title }}
+{%- endcapture -%}
+
+{%- assign bcPages = bcPages | split: newline -%}
+{%- assign bcNames = bcNames | split: newline -%}
+
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
   {% include page/links.html %}
   <script type="application/javascript" src="{{ "/assets/js/event.js" | relative_url }}"></script>
+  <script type="application/ld+json">
+  {% include json-ld/breadcrumbs.json pages=bcPages names=bcNames %}
+  </script>
   <script type="application/ld+json">
   {% include json-ld/event.json event=page.slug speakers=speakers %}
   </script>
