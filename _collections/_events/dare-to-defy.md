@@ -41,6 +41,8 @@ tickets:
   - name: "Standard"
     price: 25
     url: http://example.com/tickets/dare-to-defy/stand
+
+bannerFill: cacaca
 ---
 
 ### Defiance. Refusing to obey. Striding into the unknown.

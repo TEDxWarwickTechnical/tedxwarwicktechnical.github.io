@@ -52,11 +52,36 @@ Events
   <script type="application/ld+json">
   {% include json-ld/event.json event=page.slug speakers=speakers %}
   </script>
+  <style type="text/css">
+  {% if page.bannerFill -%}
+    #banner {
+      background-color: #{{ page.bannerFill }};
+    }
+  {%- endif %}
+  </style>
 </head>
 <body>
   <div id="content">
     {% include page/header.html %}
     <main>
+      {% assign bannerImgAttrKeys = 'class' | split: ' ' -%}
+      {% assign bannerImgAttrVals = 'banner-img' | split: ' ' -%}
+      {% assign bannerImgName = 'events/' | append: page.slug | append: '/banner' -%}
+      {% capture bannerImg -%}
+        {% include img.html
+                   img=bannerImgName
+                   alt=page.title
+                   attrKeys=bannerImgAttrKeys
+                   attrVals=bannerImgAttrVals
+         %}
+      {%- endcapture -%}
+      {% if bannerImg -%}
+      <div id="banner" class="banner{% if page.bannerFill %} banner-backfill{% endif %}">
+        <div class="container">
+          {{ bannerImg }}
+        </div>
+      </div>
+      {%- endif %}
       <div class="container">
         <h2>{{ page.title }}</h2>
         {{ content }}

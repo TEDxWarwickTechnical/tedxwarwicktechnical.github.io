@@ -1,3 +1,18 @@
+.banner {
+  .banner-img {
+    width: 100%;
+    display: block;
+  }
+
+  &.banner-backfill {
+    overflow: hidden;
+
+    .banner-img {
+      @include elevate(8);
+    }
+  }
+}
+
 .card.event-card {
   $card-height: 150px;
 

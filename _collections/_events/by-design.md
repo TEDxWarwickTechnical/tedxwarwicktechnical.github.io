@@ -16,6 +16,8 @@ tickets:
   - name: "Free"
     price: 0
     saleEnd: 2018-10-24 16:29:59 +0000
+
+bannerFill: e7d2c5
 ---
 
 How can the design of a desk or lampshade change the way we work? Can we design
