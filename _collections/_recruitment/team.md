@@ -4,8 +4,7 @@ form: team-recruitment-2019
 
 year: 2019
 
-status: open
-closes: 2018-10-15 12:00:00 +0000
+status: closed
 
 brief:
   open: |
