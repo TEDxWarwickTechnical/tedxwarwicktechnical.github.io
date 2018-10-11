@@ -11,6 +11,7 @@ time:
 location: ramphal
 
 speakers:
+  - ellie-runcie
 
 tickets:
   - name: "Free"
