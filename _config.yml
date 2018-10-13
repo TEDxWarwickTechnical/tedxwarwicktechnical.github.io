@@ -16,6 +16,7 @@ sass:
   style: compressed
 
 plugins:
+  - jekyll-redirect-from
   - jekyll-sitemap
 
 error_mode: strict
@@ -95,6 +96,9 @@ nav:
   - key: recruitment
     name: "Get Involved"
     page: "/get-involved"
+  - key: blog
+    name: "Blog"
+    page: "/blog"
   - key: about
     name: "About"
     page: "/about"
