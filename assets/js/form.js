@@ -14,12 +14,6 @@ x.onPageLoad(() => {
 
     x.resizeFrame(frame, wrapper, e);
   });
-
-  window.setTimeout(() => {
-    if (wrapper.classList.contains('loading')) {
-      wrapper.classList.add('timeout');
-    }
-  }, 5000);
 });
 
 x.extend({

@@ -1,5 +1,5 @@
 @function hover-transition($prop) {
-  @return #{"#{$prop} #{$hover-transition-time} cubic-bezier(0.4, 0, 0.2, 1)"};
+  @return #{"#{$prop} #{$hover-transition-time} #{$hover-transition-curve}"};
 }
 
 @mixin overlay {
