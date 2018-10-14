@@ -9,24 +9,9 @@
     text-align: center;
     color: #444;
 
-    transition: hover-transition(padding-top);
-
     .timeout-content {
       visibility: hidden;
       opacity: 0;
-
-      transition: visibility 0s, hover-transition(opacity);
-    }
-  }
-
-  &.timeout {
-    .loading-overlay {
-      padding-top: 0.5rem;
-
-      .timeout-content {
-        visibility: visible;
-        opacity: 1;
-      }
     }
   }
 
@@ -62,7 +47,37 @@
         to { background-position: 20rem 0; }
       }
 
-      animation: stripes 10s linear infinite;
+      @keyframes timeout-overlay {
+        to { padding-top: 1.5rem; }
+      }
+
+      $time: $hover-transition-time * 2;
+      $curve: $hover-transition-curve;
+
+      animation: stripes 10s linear infinite,
+                 $time $curve 2s 1 normal forwards running timeout-overlay;
+
+      .loading-text {
+        @include h1;
+
+        @keyframes timeout-text {
+          to { @include h2; }
+        }
+
+        animation: $time $curve 2s 1 normal forwards running timeout-text;
+      }
+
+      .timeout-content {
+        @keyframes timeout-content {
+          to { visibility: visible; opacity: 1; }
+        }
+
+        animation: $time $curve 2s 1 normal forwards running timeout-content;
+      }
+
+      .timeout-btn:not(:hover) {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
     }
   }
 
