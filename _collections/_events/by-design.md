@@ -11,6 +11,7 @@ time:
 location: ramphal
 
 speakers:
+  - simon-garfield
   - ellie-runcie
 
 tickets:
