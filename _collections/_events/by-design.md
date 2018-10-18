@@ -12,6 +12,7 @@ location: ramphal
 
 speakers:
   - simon-garfield
+  - nick-tyler
   - ellie-runcie
 
 tickets:
