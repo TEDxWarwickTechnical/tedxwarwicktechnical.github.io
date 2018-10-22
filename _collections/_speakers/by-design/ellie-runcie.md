@@ -1,6 +1,6 @@
 ---
 title: "Ellie Runcie"
-short-bio: "Future Programmes Director at the Design Council"
+short-bio: "Director, Growth & Innovation at the Design Council"
 ---
 
 Ellie is Director of Design Council's Growth and Innovation Programmes, which
