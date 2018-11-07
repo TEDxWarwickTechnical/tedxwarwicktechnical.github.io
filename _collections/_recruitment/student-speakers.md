@@ -20,6 +20,9 @@ brief:
   future: |
     Soon we will be opening applications for speakers at our Student Salon. For
     now, why not check out some of [our previous events](/events)?
+
+redirect_from:
+  /get-involved/student-speaker
 ---
 
 ## Speak at the TEDxWarwick Student Salon
