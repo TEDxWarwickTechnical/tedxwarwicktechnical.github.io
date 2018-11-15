@@ -55,18 +55,12 @@ title: "Partners"
     <div class="partners">
       {% for partner in standardPartners -%}
         <a href="{{ partner.website | default: '#' }}" target="_blank" class="plain">
-          <div class="card partner-card">
-            {%- assign attrKeys = '' | split: '' -%}
-            {%- assign attrVals = '' | split: '' -%}
-            {%- assign attrKeys = attrKeys | push: 'class' -%}
-            {%- assign attrVals = attrVals | push: 'logo' -%}
-            {%- assign img = 'partners/' | append: partner.slug | append: '/logo' -%}
+          <div class="card partner-card" title="{{ partner.title }}">
+            {%- assign img = 'partners/' | append: partner.slug | append: '/card' -%}
             {% include img.html
                        img=img
-                       imgDefault='partners/default/logo'
+                       imgDefault='partners/default/card'
                        alt=partner.title
-                       attrKeys=attrKeys
-                       attrVals=attrVals
              %}
           </div>
         </a>
