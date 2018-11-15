@@ -35,7 +35,9 @@ title: "Partners"
         {%- assign attrVals = '' | split: '' -%}
         {%- assign attrKeys = attrKeys | push: 'class' -%}
         {%- assign attrVals = attrVals | push: 'logo-inset' -%}
-        {%- assign img = 'partners/' | append: partner.slug | append: '/logo' -%}
+        {%- assign attrKeys = attrKeys | push: 'title' -%}
+        {%- assign attrVals = attrVals | push: partner.title -%}
+        {%- assign img = 'partners/' | append: partner.slug | append: '/inset' -%}
         {% include img.html
                    img=img
                    imgDefault='partners/default/logo'
