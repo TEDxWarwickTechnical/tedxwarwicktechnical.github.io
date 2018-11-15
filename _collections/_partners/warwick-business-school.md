@@ -4,7 +4,7 @@ type: platinum
 website: https://www.wbs.ac.uk/
 ---
 
-Warwick Business School (WBS) is a world-class business school at the heart of
+**Warwick Business School (WBS)** is a world-class business school at the heart of
 a world-class university, offering Undergraduate, Masters, MBA and Doctoral
 programmes. As one of Europe's leading global business schools, with a
 cosmopolitan outlook, we set out to lead the debate through our transformative
