@@ -59,6 +59,7 @@ possible. Applications will be reviewed on a rolling basis, and applying early
 may be beneficial. You have the option of attaching a video file with a maximum
 length of two minutes. The submission will be reviewed by our Content Team, who
 will reply by email. Please aim to be concise, limiting your answers to
-approximately 150 words per question. Please note that we are a student run
-non-profit, so in some cases we will take a long time to respond, especially
-during Spring and Summer. Thank you for your interest - and good luck!
+approximately 150 words per question. Please note that we review applications on 
+a rolling basis for all of our events during the academic year. Unfortunately, 
+due to the very large volume of applications we receive, we are only able to 
+reply to successful candidates. Thank you for your interest - and good luck!
