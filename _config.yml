@@ -79,6 +79,9 @@ exclude:
   - CNAME
   - docs/
 
+include:
+  - .well-known
+
 
 ###################
 # Site parameters #
