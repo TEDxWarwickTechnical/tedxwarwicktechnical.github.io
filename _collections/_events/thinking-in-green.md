@@ -12,6 +12,9 @@ time:
 location: ramphal
 
 speakers:
+  - toby-mccartney
+  - simon-caney
+  - abdelaziz-matani
 
 tickets:
   - name: "Free"
