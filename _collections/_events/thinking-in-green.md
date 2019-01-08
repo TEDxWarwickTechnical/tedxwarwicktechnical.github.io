@@ -10,6 +10,7 @@ time:
   start: 2018-11-28 16:30:00 +0000
   end: 2018-11-28 18:30:00 +0000
 location: ramphal
+upcoming: false
 
 speakers:
   - toby-mccartney

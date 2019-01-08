@@ -10,6 +10,7 @@ time:
   start: 2018-03-03 10:00:00 +0000
   end: 2018-03-03 18:00:00 +0000
 location: butterworth
+upcoming: false
 
 speakers:
   - pragya-agarwal

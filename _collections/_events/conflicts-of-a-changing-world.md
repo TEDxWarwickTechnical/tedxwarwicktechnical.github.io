@@ -11,6 +11,7 @@ time:
   start: 2017-11-29 17:00:00 +0000
   end: 2017-11-29 19:00:00 +0000
 location: ramphal
+upcoming: false
 
 speakers:
   - charlotte-heath-kelly

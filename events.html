@@ -12,7 +12,7 @@ title: "Events"
   {%- assign year = event.time.start | date: "%Y" -%}
 
   {%- if currentEvents -%}
-    {%- if site.time > event.time.end -%}
+    {%- unless event.upcoming -%}
       {%- assign currentEvents = false -%}
       {% if prevYear == 0 -%}
         <p>We haven't announced any of our future events yet. Stay tuned for
@@ -20,7 +20,7 @@ title: "Events"
       {%- endif %}
       <h3>Past events</h3>
       {%- assign prevYear = 0 -%}
-    {%- endif -%}
+    {%- endunless -%}
   {%- endif -%}
 
   {% unless year == prevYear or currentEvents -%}
