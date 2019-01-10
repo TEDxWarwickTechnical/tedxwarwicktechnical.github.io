@@ -107,6 +107,8 @@ nav:
     page: "/about"
 
 cta:
+  - name: Tickets
+    link: "/tickets"
 
 fb-app-id: "600131706999745"
 fb-page: "TEDxWarwick"

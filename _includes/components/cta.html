@@ -1,7 +1,24 @@
 <div>
-  {% for btn in site.cta -%}
-  <a class="btn btn-{{ btn.style | default: primary }}" role="button" href="{{ btn.page | relative_url }}">
+{% for btn in site.cta -%}
+
+{%- assign script = btn.script -%}
+{%- assign link = btn.link -%}
+
+{%- if script -%}
+  <button class="btn btn-{{ btn.style | default: 'primary' }}" role="button" onclick="{{ script }}">
+    {{ btn.name }}
+  </button>
+
+{%- elsif link -%}
+  {%- assign linkFirstChar = link | slice: 0 -%}
+  {%- if linkFirstChar == '/' -%}
+    {%- assign link = link | relative_url -%}
+  {%- endif -%}
+
+  <a class="btn btn-{{ btn.style | default: 'primary' }}" role="button" href="{{ link }}">
     {{ btn.name }}
   </a>
-  {%- endfor %}
+{%- endif -%}
+
+{%- endfor %}
 </div>
