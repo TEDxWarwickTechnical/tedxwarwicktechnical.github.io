@@ -5,7 +5,19 @@
   {% if page.style -%}
     <style type="text/css">{{ page.style }}</style>
   {%- endif %}
-  
+
+  {%- assign styles = '' | split: '' -%}
+  {%- if page.styles -%}
+    {%- assign styles = styles | concat: page.styles -%}
+  {%- endif -%}
+  {%- if layout.styles -%}
+    {%- assign styles = styles | concat: layout.styles -%}
+  {%- endif -%}
+  {% for style in styles -%}
+    {% assign styleFile = '/assets/css/' | append: style | append: '.css' | relative_url -%}
+    <link type="text/css" rel="stylesheet" href="{{ styleFile }}">
+  {%- endfor %}
+
   {%- assign scripts = '' | split: '' -%}
   {%- if page.scripts -%}
     {%- assign scripts = scripts | concat: page.scripts -%}
