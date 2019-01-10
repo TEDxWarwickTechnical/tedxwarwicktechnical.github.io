@@ -20,7 +20,6 @@ speakers:
 tickets:
   - name: "Free"
     price: 0
-    saleEnd: 2018-11-28 16:29:59 +0000
 
 bannerFill: cbd4c9
 ---
