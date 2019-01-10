@@ -9,6 +9,7 @@ time:
   start: 2018-10-24 16:30:00 +0000
   end: 2018-10-24 18:30:00 +0000
 location: ramphal
+upcoming: false
 
 speakers:
   - simon-garfield

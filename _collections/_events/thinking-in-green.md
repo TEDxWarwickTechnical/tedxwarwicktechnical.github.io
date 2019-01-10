@@ -10,13 +10,16 @@ time:
   start: 2018-11-28 16:30:00 +0000
   end: 2018-11-28 18:30:00 +0000
 location: ramphal
+upcoming: false
 
 speakers:
+  - toby-mccartney
+  - simon-caney
+  - abdelaziz-matani
 
 tickets:
   - name: "Free"
     price: 0
-    saleEnd: 2018-11-28 16:29:59 +0000
 
 bannerFill: cbd4c9
 ---

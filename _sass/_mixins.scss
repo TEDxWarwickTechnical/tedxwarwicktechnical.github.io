@@ -18,7 +18,12 @@
   color: $color-muted;
 }
 
+@mixin red {
+  color: $ted-red;
+}
+
 $export: true !default;
 @if ($export) {
   .muted { @include muted }
+  .red { @include red }
 }
