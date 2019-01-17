@@ -10,7 +10,7 @@ time:
   start: 2019-01-16 16:30:00 +0000
   end: 2019-01-16 18:30:00 +0000
 location: ramphal
-upcoming: true
+upcoming: false
 
 speakers:
   - andrea-arnal
