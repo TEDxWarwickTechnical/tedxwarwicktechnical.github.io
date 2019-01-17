@@ -21,6 +21,9 @@ brief:
     Soon we will be opening applications for volunteers at TEDxWarwick's
     flagship conference. For now, why not learn more [the team](/about) and
     [the upcoming event](/events).
+
+redirect_from:
+  /get-involved/volunteer
 ---
 
 ## Volunteer at TEDxWarwick 2019
