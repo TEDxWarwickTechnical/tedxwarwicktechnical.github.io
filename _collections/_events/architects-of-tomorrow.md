@@ -18,23 +18,24 @@ speakers:
 tickets:
   - name: "Early Bird"
     price: 18
-    url: https://go.tedxw.co/tickets
+    url: https://www.tedxwarwick.com/tickets
+    soldOut: true
 
   - name: "Student"
     price: 20
-    url: https://go.tedxw.co/tickets
+    url: https://www.tedxwarwick.com/tickets
 
   - name: "Standard"
     price: 25
-    url: https://go.tedxw.co/tickets
+    url: https://www.tedxwarwick.com/tickets
 
   - name: "Premium"
     price: 30
-    url: https://go.tedxw.co/tickets
+    url: https://www.tedxwarwick.com/tickets
 
   - name: "VIP"
     price: 39
-    url: https://go.tedxw.co/tickets
+    url: https://www.tedxwarwick.com/tickets
 
 bannerFill: eeeeee
 ---
