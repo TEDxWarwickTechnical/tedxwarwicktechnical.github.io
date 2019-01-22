@@ -13,6 +13,7 @@ location: butterworth
 upcoming: true
 
 speakers:
+  - mads-faurholt-jorgensen
 
 tickets:
   - name: "Early Bird"
