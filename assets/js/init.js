@@ -72,6 +72,10 @@ const x = {
       const threshold = document.querySelector('header .cta').clientHeight;
       const content = document.getElementById('content');
       const padding = header.offsetHeight - threshold;
+      const toggler = document.getElementById('navbar-toggler');
+      const nav     = document.getElementsByClassName('nav')[0];
+
+      console.log(nav);
 
       x.extend({ headerOverlap: threshold });
 
@@ -80,7 +84,7 @@ const x = {
       let wasSmallHeader = false;
 
       window.addEventListener('scroll', e => {
-        smallHeader = window.scrollY >= threshold;
+        smallHeader = window.scrollY >= threshold && window.outerWidth > 960;
 
         if (!ticking) {
           window.requestAnimationFrame(() => {
@@ -104,6 +108,16 @@ const x = {
           ticking = true;
         }
       });
+
+      // Hide and Show Mobile Navbar Dropdown
+      toggler.addEventListener('click', () => {
+        if (nav.style.display == 'none') {
+          nav.style.display = 'block';
+        } else {
+          nav.style.display = 'none';
+        }
+      })
+
     },
   ],
 };

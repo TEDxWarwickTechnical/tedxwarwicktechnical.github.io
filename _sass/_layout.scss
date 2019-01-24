@@ -32,3 +32,9 @@ main {
 footer {
   margin-top: 5em;
 }
+
+@media (max-width: 960px){
+  .container {
+    width: 100%;
+  }
+}
