@@ -24,6 +24,17 @@
   img {
     flex: 0 0 ($card-height * (1920 / 1080));
   }
+
+  @media (max-width: 960px){
+    & {
+      flex-direction: column;
+      height: 100%;
+    }
+    img {
+      flex: auto;
+    }
+
+  }
 }
 
 .speakers {

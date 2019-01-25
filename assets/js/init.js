@@ -74,9 +74,6 @@ const x = {
       const padding = header.offsetHeight - threshold;
       const toggler = document.getElementById('navbar-toggler');
       const nav     = document.getElementsByClassName('nav')[0];
-
-      console.log(nav);
-
       x.extend({ headerOverlap: threshold });
 
       let ticking = false;
@@ -117,7 +114,6 @@ const x = {
           nav.style.display = 'none';
         }
       })
-
     },
   ],
 };
