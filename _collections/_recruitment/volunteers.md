@@ -4,7 +4,7 @@ form: volunteers-2019
 
 year: 2019
 
-status: open
+status: closed
 
 brief:
   open: |
