@@ -74,6 +74,7 @@ const x = {
       const padding = header.offsetHeight - threshold;
       const toggler = document.getElementById('navbar-toggler');
       const nav     = document.getElementsByClassName('nav')[0];
+
       x.extend({ headerOverlap: threshold });
 
       let ticking = false;
@@ -106,14 +107,16 @@ const x = {
         }
       });
 
-      // Hide and Show Mobile Navbar Dropdown
-      toggler.addEventListener('click', () => {
-        if (nav.style.display == 'none') {
-          nav.style.display = 'block';
+      // Toggle between display none and block for mobile navbar
+      toggler.addEventListener('click', () => { 
+        if(nav.className == "nav"){
+          nav.className = "nav-small"; 
         } else {
-          nav.style.display = 'none';
+          nav.className = "nav";
         }
       })
+
+
     },
   ],
 };
