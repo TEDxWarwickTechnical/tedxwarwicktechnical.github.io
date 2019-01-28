@@ -86,3 +86,92 @@
   //   border-radius: 0;
   // }
 }
+
+.cardPopover {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @include elevate(2);
+
+  transition: hover-transition(box-shadow);
+
+  cursor: pointer;
+
+  border-radius: $card-border-radius;
+
+  :first-child {
+    border-top-left-radius: $card-border-radius;
+    border-top-right-radius: $card-border-radius;
+    border-top: none !important;
+  }
+
+  :last-child {
+    border-bottom-left-radius: $card-border-radius;
+    border-bottom-right-radius: $card-border-radius;
+    border-bottom: none !important;
+  }
+
+  * {
+    width: 100%;
+  }
+
+  .text {
+    padding: 0.5rem 1rem;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    box-sizing: border-box;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+  }
+
+  &:hover {
+    @include elevate(3);
+
+    &::after {
+      opacity: 0.02;
+    }
+  }
+
+  // .content {
+  //   flex: 1;
+  //   position: relative;
+  //   cursor: pointer;
+  //
+  //   &::before {
+  //     content: '';
+  //     display: block;
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //     width: 100%;
+  //     height: 100%;
+  //
+  //     transition: box-shadow 0.2s ease-in-out;
+  //   }
+  //
+  //   &:hover::before {
+  //     box-shadow: 0 0 0.1em #666 inset;
+  //   }
+  //
+  //   &:active::before {
+  //     box-shadow: 0 0 0.2em #666 inset;
+  //   }
+  // }
+  //
+  // .button {
+  //   background-color: inherit;
+  //   border-left: none;
+  //   border-right: none;
+  //   border-radius: 0;
+  // }
+}
