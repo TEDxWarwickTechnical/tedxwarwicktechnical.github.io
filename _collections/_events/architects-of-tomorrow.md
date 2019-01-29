@@ -13,6 +13,8 @@ location: butterworth
 upcoming: true
 
 speakers:
+  - gregory-klumov
+  - poppy-gustafsson
   - mads-faurholt-jorgensen
 
 tickets:
