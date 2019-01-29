@@ -50,6 +50,8 @@
   @media (max-width: 960px){
     & {
       display: flex;
+      flex-direction: column;
+      margin: 14px 0px;
     }
 
   }
