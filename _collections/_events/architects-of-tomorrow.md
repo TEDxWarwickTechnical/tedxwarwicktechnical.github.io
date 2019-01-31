@@ -13,6 +13,7 @@ location: butterworth
 upcoming: true
 
 speakers:
+  - susu
   - gregory-klumov
   - poppy-gustafsson
   - mads-faurholt-jorgensen
