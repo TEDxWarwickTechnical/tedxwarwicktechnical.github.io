@@ -16,6 +16,7 @@ speakers:
   - gregory-klumov
   - poppy-gustafsson
   - mads-faurholt-jorgensen
+  - susu
 
 tickets:
   - name: "Early Bird"
