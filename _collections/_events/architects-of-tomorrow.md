@@ -13,6 +13,10 @@ location: butterworth
 upcoming: true
 
 speakers:
+  - james-furzer
+  - shane-holland
+  - hannah-anderson
+  - enass-abo-hamed
   - gregory-klumov
   - poppy-gustafsson
   - mads-faurholt-jorgensen
