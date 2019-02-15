@@ -11,6 +11,10 @@
       @include elevate(8);
     }
   }
+  
+  .container{
+    padding: 0;
+  }
 }
 
 .card.event-card {
@@ -24,6 +28,16 @@
   img {
     flex: 0 0 ($card-height * (1920 / 1080));
   }
+  @media (max-width: 960px) {
+    & {
+      flex-direction: column;
+      height: 100%;
+    }
+    img {
+      flex: auto;
+    }
+
+  }
 }
 
 .speakers {
@@ -32,4 +46,13 @@
   grid-gap: 40px;
   justify-content: space-between;
   margin: 1rem 0;
+  
+  @media (max-width: 960px) {
+    & {
+      display: flex;
+      flex-direction: column;
+      margin: 14px 0;
+    }
+
+  }
 }

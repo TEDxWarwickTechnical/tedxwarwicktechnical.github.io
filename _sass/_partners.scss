@@ -4,7 +4,19 @@
   img {
     width: auto;
     margin: 10px;
+
+    @media (max-width: 960px){
+      width: max-content;
+    }
   }
+
+  @media (max-width: 960px){
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 11px 0px;
+  }
+
 }
 
 .partners {
@@ -13,6 +25,11 @@
   grid-gap: 40px;
   justify-content: space-between;
   margin: 1rem 0;
+
+  @media (max-width: 960px){
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .partner-large {

@@ -8,10 +8,22 @@ header {
   transition: hover-transition(border-bottom),
               hover-transition(box-shadow);
 
+  @media (max-width: 960px){
+    & {
+      height: inherit;
+    }
+  }
+
   .container {
     height: 100%;
     display: flex;
     flex-direction: row;
+
+    @media (max-width: 960px) {
+      & {
+        flex-direction: column;
+      }
+    }
   }
 
   .brand {
@@ -28,6 +40,32 @@ header {
       // MS Edge doesn't like unbounded SVG images.
       // This value was derived empirically using Chrome 69.
       max-width: 501px;
+
+      @media (max-width: 960px) {
+        & {
+          height: 38px;
+          margin: 12px 0;
+          max-width: initial;
+        }
+      }
+    }
+  }
+
+  button {
+    border: transparent;
+    font-size: 1.4em;
+    position: absolute;
+    right: 1.2em;
+    top: 0.7em;
+    padding: 0px;
+    display: none;
+    cursor: pointer;
+    background-color: transparent;
+
+    @media (max-width: 960px){
+      & {
+        display: block;
+      }
     }
   }
 
@@ -36,6 +74,17 @@ header {
     display: flex;
     flex-direction: column;
     margin-left: 2em;
+
+    @media (max-width: 960px){
+      & {
+        margin-left: 0px;
+        display: none;
+      }
+    }
+  }
+
+  .nav-show {
+    display: block;
   }
 
   .cta {
@@ -47,6 +96,10 @@ header {
     flex-direction: column;
     justify-content: center;
     padding-right: 1rem;
+
+    @media (max-width: 960px){
+      text-align: left;
+    }
   }
 
   nav {
@@ -54,10 +107,23 @@ header {
 
     text-align: right;
 
+    @media (max-width: 960px){
+      & {
+        text-align: left;
+        margin-left: 0em;
+      }
+    }
+
     ul {
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
+
+      @media (max-width: 960px){
+        & {
+          flex-direction: column;
+        }
+      }
     }
 
     li {

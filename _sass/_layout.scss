@@ -9,6 +9,10 @@ header, main, footer {
 .container {
   width: 960px;
   margin: 0 auto;
+
+  @media (max-width: 960px){
+    padding: 0px 20px;
+  }
 }
 
 section {
@@ -31,4 +35,10 @@ main {
 
 footer {
   margin-top: 5em;
+}
+
+@media (max-width: 960px){
+  .container {
+    width: 100%;
+  }
 }
