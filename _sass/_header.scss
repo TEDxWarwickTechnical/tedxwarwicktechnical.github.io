@@ -8,7 +8,6 @@ header {
   transition: hover-transition(border-bottom),
               hover-transition(box-shadow);
 
-
   @media (max-width: 960px){
     & {
       height: inherit;
@@ -20,7 +19,7 @@ header {
     display: flex;
     flex-direction: row;
 
-    @media (max-width: 960px){
+    @media (max-width: 960px) {
       & {
         flex-direction: column;
       }
@@ -42,23 +41,22 @@ header {
       // This value was derived empirically using Chrome 69.
       max-width: 501px;
 
-      @media (max-width: 960px){
+      @media (max-width: 960px) {
         & {
           height: 38px;
-          margin: 12px 0px;
+          margin: 12px 0;
           max-width: initial;
         }
       }
-
     }
   }
 
   button {
     border: transparent;
-    font-size: 22px;
+    font-size: 1.4em;
     position: absolute;
-    right: 30px;
-    top: 18px;
+    right: 1.2em;
+    top: 0.7em;
     padding: 0px;
     display: none;
     cursor: pointer;
@@ -85,6 +83,9 @@ header {
     }
   }
 
+  .nav-show {
+    display: block;
+  }
 
   .cta {
     flex: 1;
