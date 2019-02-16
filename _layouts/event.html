@@ -91,8 +91,15 @@ Events
           <div class="speakers">
             {% for speaker in speakers -%}
             <div class="card" data-slug="{{ speaker.slug }}">
-              {%- assign imgBase = "/assets/img/speakers/" | append: page.slug | append: "/" | append: speaker.slug | relative_url %}
-              <img class="headshot" src="{{ imgBase }}.png" srcset="{{ imgBase }}@2x.png 2x" alt="{{ speaker.title }}">
+              {% assign headshotImgAttrKeys = 'class' | split: ' ' -%}
+              {% assign headshotImgAttrVals = 'headshot' | split: ' ' -%}
+              {% assign headshotImgName = 'speakers/' | append: page.slug | append: '/' | append: speaker.slug -%}
+              {% include img.html
+                         img=headshotImgName
+                         alt=speaker.title
+                         attrKeys=headshotImgAttrKeys
+                         attrVals=headshotImgAttrVals
+               %}
               <div class="text">
                 {% if speaker.tags -%}
                   <div class="overline">{{ speaker.tags | join: "&emsp;" }}</div>
@@ -105,12 +112,6 @@ Events
                   <div class="small">{{ speaker.talk }}</div>
                 {%- endif %}
               </div>
-              {% if speaker.video -%}
-                <div class="actions">
-                  <!-- <img src="//img.youtube.com/vi/{{ speaker.video }}/mqdefault.jpg"> -->
-                  <!-- <a class="button" role="button" href="https://www.youtube.com/watch?v={{ speaker.video }}">Watch Video</a> -->
-                </div>
-              {%- endif %}
             </div>
             {% endfor %}
           </div>
@@ -131,24 +132,59 @@ Events
     </main>
     {% include page/footer.html %}
   </div>
+
   <div id="overlay"></div>
-  {% comment %}
+
   {% for speaker in speakers -%}
-    <div id="speaker-popover-{{ speaker.slug }}" class="popover">
-      <h4>{{ speaker.title }}</h4>
-      {% if speaker["short-bio"] -%}
-        <h5 class="muted">{{ speaker["short-bio"] }}</h5>
-      {%- endif %}
-      {% if speaker.talk -%}
-        <div class="small">{{ speaker.talk }}</div>
-      {%- endif %}
-      {% if speaker.video -%}
-          <img src="//img.youtube.com/vi/{{ speaker.video }}/mqdefault.jpg">
-          <!-- <a class="button" role="button" href="https://www.youtube.com/watch?v={{ speaker.video }}">Watch Video</a> -->
-      {%- endif %}
+  <div id="popover-{{ speaker.slug }}" class="popover popover-hidden">
+    <div class="popover-wrap">
+      <div class="popover-content">
+        <div class="popover-sidebar">
+          {% assign headshotImgAttrKeys = 'class' | split: ' ' -%}
+          {% assign headshotImgAttrVals = 'popover-headshot' | split: ' ' -%}
+          {% assign headshotImgName = 'speakers/' | append: page.slug | append: '/' | append: speaker.slug -%}
+          {% include img.html
+                     img=headshotImgName
+                     alt=speaker.title
+                     attrKeys=headshotImgAttrKeys
+                     attrVals=headshotImgAttrVals
+           %}
+
+          <div class="popover-text">
+            {% if speaker.tags -%}
+              <div class="overline">{{ speaker.tags | join: "&emsp;" }}</div>
+            {%- endif %}
+
+            <h6>{{ speaker.title }}</h6>
+
+            {% if speaker['short-bio'] -%}
+              <div class="caption">{{ speaker['short-bio'] }}</div>
+            {%- endif %}
+          </div>
+        </div>
+        <div class="popover-body">
+          {% if speaker.video -%}
+            <div class="popover-video">
+              <img src="//img.youtube.com/vi/{{ speaker.video }}/maxresdefault.jpg">
+              {% assign videoUrl = 'https://www.youtube.com/embed/' | append: speaker.video -%}
+              <iframe class="ytembed" data-src="{{ videoUrl }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+          {%- endif %}
+
+          <div class="popover-text">
+            {% if speaker.talk -%}
+              <h5>{{ speaker.talk }}</h5>
+            {%- endif %}
+
+            {{ speaker.content | markdownify }}
+          </div>
+        </div>
+      </div>
+      <div class="close"></div>
     </div>
+  </div>
   {%- endfor %}
-  {% endcomment %}
+
   {% if page.script.size > 0 -%}
     <script type="application/javascript">{{ page.script }}</script>
   {%- endif %}
