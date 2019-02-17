@@ -13,6 +13,9 @@ location: butterworth
 upcoming: true
 
 speakers:
+  - roger-sutcliffe
+  - casper-slots
+  - jennifer-fox
   - james-furzer
   - shane-holland
   - hannah-anderson
