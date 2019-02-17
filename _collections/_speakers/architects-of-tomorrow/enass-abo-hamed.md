@@ -1,5 +1,5 @@
 ---
-title: "Enass Abo Hamed"
+title: "Enass Abo-Hamed"
 short-bio: "CEO & Co-founder of H2GO Power"
 tags:
   - Renewable energy
