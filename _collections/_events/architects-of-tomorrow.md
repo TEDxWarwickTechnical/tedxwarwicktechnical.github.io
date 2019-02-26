@@ -13,6 +13,10 @@ location: butterworth
 upcoming: true
 
 speakers:
+  - julia-king
+  - christopher-newman
+  - julia-barbosa
+  - olaf-otto
   - roger-sutcliffe
   - casper-slots
   - jennifer-fox
