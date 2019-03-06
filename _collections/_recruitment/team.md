@@ -2,9 +2,9 @@
 title: Team members
 form: team-recruitment-2019
 
-year: 2019
+year: 2020
 
-status: closed
+status: future
 
 brief:
   open: |
@@ -13,7 +13,7 @@ brief:
     members are now open!
 
   closed: |
-    Applications for team members for 2019 have now closed. Many thanks to all
+    Applications for team members for 2020 have now closed. Many thanks to all
     those who applied, we will review each application carefully and get back
     to you shortly.
 
@@ -125,7 +125,7 @@ sections:
     label: Operations
     description: |
       The Operations team is responsible for the flawless execution of
-      TEDxWarwick 2019. This includes -- and is not limited to -- organising
+      TEDxWarwick 2020. This includes -- and is not limited to -- organising
       the venue, catering, ticketing and volunteer management. You will be
       working closely with the other TEDxWarwick teams to ensure that all
       logistics and operations are in order. An Operations team member must be
@@ -149,7 +149,7 @@ sections:
       We successfully introduced the TEDxWarwick Magazine in 2014 and have
       issued it every year since. Therefore, we are looking for a few team
       members to join our publications team, which is responsible for editing
-      and curating the content of the TEDxWarwick 2019 magazine and blog. They
+      and curating the content of the TEDxWarwick 2020 magazine and blog. They
       include information and articles about the main event, history of the
       society, salon events, past and future speakers -- basically anything
       that might be relevant to TEDxWarwick. We are looking for someone who:
@@ -174,7 +174,7 @@ sections:
       website, as well as various technical aspects of the live events. We work
       closely with the Creative and Marketing teams, and in particular liaise
       with departments of the University and the Warwick Arts Centre in the
-      run-up to our main event. Our main aim for 2019 is to improve the quality
+      run-up to our main event. Our main aim for 2020 is to improve the quality
       and consistency of our live recordings.
 
       The following skills are preferable but not essential; anyone with an

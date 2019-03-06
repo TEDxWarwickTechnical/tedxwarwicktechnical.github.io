@@ -2,9 +2,9 @@
 title: Student speakers
 form: student-speakers-2019
 
-year: 2019
+year: 2020
 
-status: closed
+status: future
 
 brief:
   open: |
@@ -13,7 +13,7 @@ brief:
     now open!
 
   closed: |
-    Applications for student speakers for 2019 have now closed. Many thanks to
+    Applications for student speakers for 2020 have now closed. Many thanks to
     all those who applied, we will review each application carefully and get
     back to you shortly.
 
@@ -29,7 +29,7 @@ redirect_from:
 
 Following the success of our first-ever Student Salon at the beginning of 2017
 and our second edition in 2018, we are now looking for speakers and performers
-for our upcoming Student Salon in January 2019.
+for our upcoming Student Salon in January 2020.
 
 You can apply to be a speaker, a performer or a hybrid (speaker with some
 performance elements).

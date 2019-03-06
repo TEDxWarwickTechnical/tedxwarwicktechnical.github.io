@@ -11,7 +11,7 @@ layout: default
 
 {% for section in page.sections -%}
   <section id="section-{{ section.name }}">
-    <h3>{{ section.label }}</h3>
+    <h4>{{ section.label }}</h4>
     {% if section.description -%}
       {{ section.description | markdownify }}
     {%- else -%}
