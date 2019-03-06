@@ -2,9 +2,9 @@
 title: Volunteers
 form: volunteers-2019
 
-year: 2019
+year: 2020
 
-status: closed
+status: future
 
 brief:
   open: |
@@ -13,7 +13,7 @@ brief:
     Applications for volunteers at our flagship event are now open!
 
   closed: |
-    Applications for volunteers for 2019 have now closed. Many thanks to all
+    Applications for volunteers for 2020 have now closed. Many thanks to all
     those who applied, we will review each application carefully and get back
     to you shortly.
 
@@ -26,9 +26,9 @@ redirect_from:
   /get-involved/volunteer
 ---
 
-## Volunteer at TEDxWarwick 2019
+## Volunteer at TEDxWarwick 2020
 
-#### We want to make TEDxWarwick 2019 our best conference yet!
+#### We want to make TEDxWarwick 2020 our best conference yet!
 
 The scale of initiatives we are running this year mean that we will need your
 support in the coming weeks leading up to our flagship conference for 2019,

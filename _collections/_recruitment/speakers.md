@@ -2,20 +2,20 @@
 title: Open speaker applications
 form: speaker-apps
 
-year: 2019
+year: 2020
 
 status: open
 
 brief:
   open: |
-    Continuing from TEDxWarwick 2018, we are looking for speakers and
-    performers for our upcoming 2019 conference. Applications will be accepted
+    Continuing from TEDxWarwick 2019, we are looking for speakers and
+    performers for our upcoming 2020 conference. Applications will be accepted
     from all backgrounds, from all over the UK. For more information, see
     [TED's FAQ](http://conferences.ted.com/TED2013/auditions/faq.php).
 
   closed: |
     We're not currently accepting applications for speakers at TEDxWarwick
-    2019.
+    2020.
 
   future: |
     Soon we will be opening applications for speakers at our main event. For
@@ -24,8 +24,8 @@ brief:
 
 ## Open Speaker Applications
 
-Continuing from TEDxWarwick 2018, we are looking for speakers and performers
-for our upcoming 2018 conference. Applications will be accepted from all
+Continuing from TEDxWarwick 2019, we are looking for speakers and performers
+for our upcoming 2020 conference. Applications will be accepted from all
 backgrounds, from all over the UK. For more information, see
 [TED's FAQ](http://conferences.ted.com/TED2013/auditions/faq.php).
 
@@ -59,7 +59,7 @@ possible. Applications will be reviewed on a rolling basis, and applying early
 may be beneficial. You have the option of attaching a video file with a maximum
 length of two minutes. The submission will be reviewed by our Content Team, who
 will reply by email. Please aim to be concise, limiting your answers to
-approximately 150 words per question. Please note that we review applications on 
-a rolling basis for all of our events during the academic year. Unfortunately, 
-due to the very large volume of applications we receive, we are only able to 
+approximately 150 words per question. Please note that we review applications on
+a rolling basis for all of our events during the academic year. Unfortunately,
+due to the very large volume of applications we receive, we are only able to
 reply to successful candidates. Thank you for your interest - and good luck!
