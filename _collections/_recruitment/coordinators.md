@@ -4,7 +4,7 @@ form: coordinator-recruitment-2020
 
 year: 2020
 
-status: closed  # One of open, closed or future
+status: open  # One of open, closed or future
 
 brief:
   open: |
