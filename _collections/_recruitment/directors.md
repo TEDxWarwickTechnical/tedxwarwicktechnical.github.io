@@ -4,7 +4,7 @@ form: director-recruitment-2020
 
 year: 2020
 
-status: open  # One of open, closed or future
+status: closed  # One of open, closed or future
 
 brief:
   open: |
